@@ -2,10 +2,15 @@ import React from "react";
 import { BiSearch, RiLayoutGridFill, HiMenuAlt1 } from "../../assets";
 import { useSelector, useDispatch } from "react-redux";
 import { countriesActions } from "../../redux";
+import { bindActionCreators } from "redux";
 
 const FilterButtons = () => {
   const { searchTerm } = useSelector((state) => state.countries);
   const dispatch = useDispatch();
+  const { handleSearch, handleSortBy, handleToggleLayout } = bindActionCreators(
+    countriesActions,
+    dispatch
+  );
   return (
     <section className="countries-filters">
       <article className="filter-search">
@@ -13,9 +18,7 @@ const FilterButtons = () => {
           type="text"
           placeholder="Search Country..."
           value={searchTerm}
-          onChange={(e) =>
-            dispatch(countriesActions.handleSearch(e.target.value))
-          }
+          onChange={(e) => handleSearch(e.target.value)}
         />
       </article>
       <article className="filter-btns">
@@ -25,9 +28,7 @@ const FilterButtons = () => {
             defaultValue="null"
             name="sort-by"
             id="sort-by"
-            onChange={(e) =>
-              dispatch(countriesActions.handleSortBy(e.target.value))
-            }
+            onChange={(e) => handleSortBy(e.target.value)}
           >
             <option value="null" disabled hidden>
               Choose here
@@ -38,7 +39,10 @@ const FilterButtons = () => {
             <option value="pop-descending">Descending (pop.)</option>
           </select>
         </div>
-        <div className="filter-btns-view"></div>
+        <div className="filter-btns-layout">
+          <button onClick={() => handleToggleLayout("default")}>def</button>
+          <button onClick={() => handleToggleLayout("alternative")}>alt</button>
+        </div>
       </article>
     </section>
   );

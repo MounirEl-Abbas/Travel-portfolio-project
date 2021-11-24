@@ -29,13 +29,18 @@ const AllCountries = () => {
       {countries.loading ? (
         <h2>Loading...</h2>
       ) : countries.error ? (
-        <h2>Error, could not get countrie.s..</h2>
+        <h2>Error, could not get countries...</h2>
       ) : countriesDisplayed.length === 0 ? (
         <h2> No Countries match your search criteria</h2>
       ) : (
         <section className="all-countries">
           {countriesDisplayed.map((country) => {
-            return (
+            return countries.defaultLayout ? (
+              <article className="country">
+                <img src={country.flags.png} alt="" />
+                <h3>{country.name.common}</h3>
+              </article>
+            ) : (
               <article className="country">
                 <img src={country.flags.png} alt="" />
                 <h3>{country.name.common}</h3>

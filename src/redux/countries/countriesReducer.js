@@ -3,6 +3,7 @@ import {
   FETCH_COUNTRIES_SUCCESS,
   FETCH_COUNTRIES_FAILURE,
   SEARCH_COUNTRIES,
+  TOGGLE_LAYOUT,
   SORT_BY,
 } from "./countriesTypes";
 
@@ -11,6 +12,7 @@ const initialState = {
   data: [],
   error: "",
   searchTerm: "",
+  defaultLayout: true,
 };
 
 const reducer = (state = initialState, action) => {
@@ -29,16 +31,31 @@ const reducer = (state = initialState, action) => {
       };
     case FETCH_COUNTRIES_FAILURE:
       return {
+        ...state,
         loading: false,
         data: [],
         error: action.payload,
-        searchTerm: "",
       };
     case SEARCH_COUNTRIES:
       return {
         ...state,
         searchTerm: action.payload,
       };
+    case TOGGLE_LAYOUT:
+      if (action.payload === "default") {
+        return {
+          ...state,
+          defaultLayout: true,
+        };
+      }
+      if (action.payload === "alternative") {
+        return {
+          ...state,
+          defaultLayout: false,
+        };
+      }
+
+      return state;
 
     case SORT_BY:
       if (action.payload === "alpha-ascending") {

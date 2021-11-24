@@ -4,6 +4,7 @@ import {
   FETCH_COUNTRIES_SUCCESS,
   FETCH_COUNTRIES_FAILURE,
   SEARCH_COUNTRIES,
+  TOGGLE_LAYOUT,
   SORT_BY,
 } from "./countriesTypes";
 
@@ -51,6 +52,15 @@ export const handleSearch = (searchInput) => {
     dispatch({
       type: SEARCH_COUNTRIES,
       payload: searchInput,
+    });
+  };
+};
+
+export const handleToggleLayout = (type) => {
+  return (dispatch) => {
+    dispatch({
+      type: TOGGLE_LAYOUT,
+      payload: type,
     });
   };
 };

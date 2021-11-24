@@ -3,8 +3,7 @@ import { BrowserRouter as Switch, Routes, Route } from "react-router-dom";
 //pages
 import Home from "./pages/home/Home";
 import AllCountries from "./pages/allCountries/AllCountries";
-import SingleCountry from "./pages/SingleCountry";
-import City from "./pages/City";
+import SingleCountry from "./pages/singleCountry/SingleCountry";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 

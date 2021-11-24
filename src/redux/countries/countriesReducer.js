@@ -17,6 +17,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    /* FETCHING COUNTRIES API */
     case FETCH_COUNTRIES_REQUEST:
       return {
         ...state,
@@ -36,11 +37,15 @@ const reducer = (state = initialState, action) => {
         data: [],
         error: action.payload,
       };
+    /***************************/
+    /* COUNTRIES PAGE FILTERS FUNCTIONALITY*/
+    //Filter search query
     case SEARCH_COUNTRIES:
       return {
         ...state,
         searchTerm: action.payload,
       };
+    //Toggle country card layout
     case TOGGLE_LAYOUT:
       if (action.payload === "default") {
         return {
@@ -54,9 +59,15 @@ const reducer = (state = initialState, action) => {
           defaultLayout: false,
         };
       }
-
       return state;
 
+    /* 
+      Sorting Countries
+- Alphabetical 
+- Reverse-alphabetical
+- Increasing Pop. 
+- Decreasing Pop.
+    */
     case SORT_BY:
       if (action.payload === "alpha-ascending") {
         let sortedData = state.data.sort((a, b) => {

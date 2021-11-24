@@ -1,26 +1,35 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { countriesActions } from "../../redux";
+import { apiActions } from "../../redux";
 import FilterButtons from "./FilterButtons";
+import { Link } from "react-router-dom";
+import EachCountry from "./EachCountry";
 
 const AllCountries = () => {
   const countries = useSelector((state) => state.countries);
+  const api = useSelector((state) => state.api);
   const dispatch = useDispatch();
 
-  useEffect(() => dispatch(countriesActions.fetchCountries()), []);
+  useEffect(async () => {
+    dispatch(apiActions.fetchCountries());
+  }, []);
+  useEffect(() => {
+    api.data.length && dispatch(countriesActions.getCountries(api.data));
+  }, [api.data]);
 
   /* Countries are Rendered conditionally */
-  let countriesDisplayed;
+  let countriesToDisplay = countries.data;
 
   if (countries.searchTerm) {
     //Search bar NOT empty
-    countriesDisplayed = countries.data.filter(
+    countriesToDisplay = countries.data.filter(
       (country) =>
         country.name.common.toLowerCase().indexOf(countries.searchTerm) !== -1
     );
   } else {
     //Seach bar empty
-    countriesDisplayed = countries.data;
+    countriesToDisplay = countries.data;
   }
   return (
     <main className="all-countries-page">
@@ -30,23 +39,15 @@ const AllCountries = () => {
         <h2>Loading...</h2>
       ) : countries.error ? (
         <h2>Error, could not get countries...</h2>
-      ) : countriesDisplayed.length === 0 ? (
+      ) : countriesToDisplay.length === 0 ? (
         <h2> No Countries match your search criteria</h2>
       ) : (
         <section className="all-countries">
-          {countriesDisplayed.map((country) => {
-            return countries.defaultLayout ? (
-              <article className="country">
-                <img src={country.flags.png} alt="" />
-                <h3>{country.name.common}</h3>
-              </article>
-            ) : (
-              <article className="country">
-                <img src={country.flags.png} alt="" />
-                <h3>{country.name.common}</h3>
-                <p>Capital: {country.capital}</p>
-                <p>Population: {country.population.toLocaleString()}</p>
-              </article>
+          {countriesToDisplay.map((country) => {
+            return (
+              <Link to={`${country.name.common}`}>
+                <EachCountry country={country} />
+              </Link>
             );
           })}
         </section>

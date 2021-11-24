@@ -1,7 +1,5 @@
 import {
-  FETCH_COUNTRIES_REQUEST,
-  FETCH_COUNTRIES_SUCCESS,
-  FETCH_COUNTRIES_FAILURE,
+  GET_COUNTRIES,
   SEARCH_COUNTRIES,
   TOGGLE_LAYOUT,
   SORT_BY,
@@ -17,30 +15,18 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_COUNTRIES_REQUEST:
+    case GET_COUNTRIES:
       return {
         ...state,
-        loading: true,
-      };
-    case FETCH_COUNTRIES_SUCCESS:
-      return {
-        ...state,
-        loading: false,
         data: action.payload,
-        error: "",
       };
-    case FETCH_COUNTRIES_FAILURE:
-      return {
-        ...state,
-        loading: false,
-        data: [],
-        error: action.payload,
-      };
+    //Filter search query
     case SEARCH_COUNTRIES:
       return {
         ...state,
         searchTerm: action.payload,
       };
+    //Toggle country card layout
     case TOGGLE_LAYOUT:
       if (action.payload === "default") {
         return {
@@ -54,9 +40,15 @@ const reducer = (state = initialState, action) => {
           defaultLayout: false,
         };
       }
-
       return state;
 
+    /* 
+      Sorting Countries
+- Alphabetical 
+- Reverse-alphabetical
+- Increasing Pop. 
+- Decreasing Pop.
+    */
     case SORT_BY:
       if (action.payload === "alpha-ascending") {
         let sortedData = state.data.sort((a, b) => {

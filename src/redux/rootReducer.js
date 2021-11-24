@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
-import apiReducer from "./api/apiReducer";
+import singleCountryReducer from "./singleCountry/singleCountryReducer";
 import countriesReducer from "./countries/countriesReducer";
+import apiReducer from "./api/apiReducer";
 
 const rootReducer = combineReducers({
-  API: apiReducer,
+  singleCountry: singleCountryReducer,
   countries: countriesReducer,
+  api: apiReducer,
 });
 
 export default rootReducer;

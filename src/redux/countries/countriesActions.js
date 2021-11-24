@@ -1,49 +1,16 @@
-import axios from "axios";
 import {
-  FETCH_COUNTRIES_REQUEST,
-  FETCH_COUNTRIES_SUCCESS,
-  FETCH_COUNTRIES_FAILURE,
+  GET_COUNTRIES,
   SEARCH_COUNTRIES,
   TOGGLE_LAYOUT,
   SORT_BY,
 } from "./countriesTypes";
 
-export const fetchCountriesRequest = () => {
+export const getCountries = (countries) => {
   return (dispatch) => {
     dispatch({
-      type: FETCH_COUNTRIES_REQUEST,
+      type: GET_COUNTRIES,
+      payload: countries,
     });
-  };
-};
-export const fetchCountriesSuccess = (data) => {
-  return (dispatch) => {
-    dispatch({
-      type: FETCH_COUNTRIES_SUCCESS,
-      payload: data,
-    });
-  };
-};
-export const fetchCountriesFailure = (error) => {
-  return (dispatch) => {
-    dispatch({
-      type: FETCH_COUNTRIES_FAILURE,
-      payload: error,
-    });
-  };
-};
-
-export const fetchCountries = () => {
-  return async (dispatch) => {
-    dispatch(fetchCountriesRequest());
-
-    try {
-      const response = await axios.get(
-        `https://restcountries.com/v3.1/alpha?codes=USA,CAN,FRA,DEU,AUT,CHE,ITA,&fields=name,capital,population,flags`
-      );
-      dispatch(fetchCountriesSuccess(response.data));
-    } catch (error) {
-      fetchCountriesFailure(error.message);
-    }
   };
 };
 
@@ -73,19 +40,3 @@ export const handleSortBy = (value) => {
     });
   };
 };
-
-// export const fetchUsers = () => {
-//   return (dispatch) => {
-//     dispatch(fetchUsersRequest);
-//     axios
-//       .get("https://jsonplaceholder.typicode.com/users")
-//       .then((response) => {
-//         const users = response.data;
-//         dispatch(fetchUsersSuccess(users));
-//       })
-//       .catch((error) => {
-//         const errorMsg = error.message;
-//         dispatch(fetchUsersFailure(errorMsg));
-//       });
-//   };
-// };

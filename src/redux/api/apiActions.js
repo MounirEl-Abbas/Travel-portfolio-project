@@ -1,29 +1,46 @@
+import axios from "axios";
+
 import {
-  FETCH_API_REQUEST,
-  FETCH_API_SUCCESS,
-  FETCH_API_FAILURE,
+  FETCH_COUNTRIES_REQUEST,
+  FETCH_COUNTRIES_SUCCESS,
+  FETCH_COUNTRIES_FAILURE,
 } from "./apiTypes";
 
-export const fetchApiRequest = () => {
+export const fetchCountriesRequest = () => {
   return (dispatch) => {
     dispatch({
-      type: FETCH_API_REQUEST,
+      type: FETCH_COUNTRIES_REQUEST,
     });
   };
 };
-export const fetchApiSuccess = (data) => {
+export const fetchCountriesSuccess = (data) => {
   return (dispatch) => {
     dispatch({
-      type: FETCH_API_SUCCESS,
+      type: FETCH_COUNTRIES_SUCCESS,
       payload: data,
     });
   };
 };
-export const fetchApiRequest = (error) => {
+export const fetchCountriesFailure = (error) => {
   return (dispatch) => {
     dispatch({
-      type: FETCH_API_FAILURE,
+      type: FETCH_COUNTRIES_FAILURE,
       payload: error,
     });
+  };
+};
+
+export const fetchCountries = () => {
+  return async (dispatch) => {
+    dispatch(fetchCountriesRequest());
+
+    try {
+      const response = await axios.get(
+        `https://restcountries.com/v3.1/alpha?codes=USA,CAN,FRA,DEU,AUT,CHE,ITA,&fields=name,capital,population,flags`
+      );
+      dispatch(fetchCountriesSuccess(response.data));
+    } catch (error) {
+      fetchCountriesFailure(error.message);
+    }
   };
 };

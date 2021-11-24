@@ -1,7 +1,5 @@
 import {
-  FETCH_COUNTRIES_REQUEST,
-  FETCH_COUNTRIES_SUCCESS,
-  FETCH_COUNTRIES_FAILURE,
+  GET_COUNTRIES,
   SEARCH_COUNTRIES,
   TOGGLE_LAYOUT,
   SORT_BY,
@@ -17,28 +15,11 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    /* FETCHING COUNTRIES API */
-    case FETCH_COUNTRIES_REQUEST:
+    case GET_COUNTRIES:
       return {
         ...state,
-        loading: true,
-      };
-    case FETCH_COUNTRIES_SUCCESS:
-      return {
-        ...state,
-        loading: false,
         data: action.payload,
-        error: "",
       };
-    case FETCH_COUNTRIES_FAILURE:
-      return {
-        ...state,
-        loading: false,
-        data: [],
-        error: action.payload,
-      };
-    /***************************/
-    /* COUNTRIES PAGE FILTERS FUNCTIONALITY*/
     //Filter search query
     case SEARCH_COUNTRIES:
       return {

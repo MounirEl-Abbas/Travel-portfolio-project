@@ -20,11 +20,8 @@ const App = () => {
         <Routes>
           <Route path="/" index element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/countries" element={<AllCountries />}>
-            <Route path=":countryName" element={<SingleCountry />}>
-              <Route path=":cityName" element={<City />} />
-            </Route>
-          </Route>
+          <Route path="/countries" element={<AllCountries />} />
+          <Route path="/countries/:countryName" element={<SingleCountry />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

@@ -1,7 +1,11 @@
 import React from "react";
 
 const City = () => {
-  return <div>City</div>;
+  return (
+    <div>
+      <h1>CITY !!!!!@!@@@@@@@@!!!!!!!!!!!</h1>
+    </div>
+  );
 };
 
 export default City;

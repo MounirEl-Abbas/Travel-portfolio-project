@@ -1,33 +1,27 @@
-import {
-  FETCH_API_REQUEST,
-  FETCH_API_SUCCESS,
-  FETCH_API_FAILURE,
-} from "./singleCountryTypes";
+import { ADD_CHOSEN_COUNTRY, GET_COUNTRY_INFO } from "./singleCountryTypes";
+import data from "../../assets/data";
+const initialState = {
+  loading: true,
+  countryObj: [],
+  countryInfo: [],
+};
 
-// const initialState = {
-//   loading: false,
-//   data: [],
-//   error: "",
-// };
-
-const reducer = (state = "", action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_API_REQUEST:
+    case ADD_CHOSEN_COUNTRY:
       return {
         ...state,
-        loading: true,
+        countryObj: action.payload,
       };
-    case FETCH_API_SUCCESS:
+
+    case GET_COUNTRY_INFO:
+      const countryAdditionalInfo = data.filter(
+        (countries) => countries.country === action.payload
+      );
       return {
+        ...state,
+        countryInfo: countryAdditionalInfo,
         loading: false,
-        data: action.payload,
-        error: "",
-      };
-    case FETCH_API_FAILURE:
-      return {
-        loading: false,
-        data: [],
-        error: action.payload,
       };
     default:
       return state;

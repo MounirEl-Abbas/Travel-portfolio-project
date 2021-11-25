@@ -12,16 +12,26 @@ const SingleCountry = () => {
   const location = useLocation(); // pathname:'/countries/COUNTY'
   const singleCountry = useSelector((state) => state.singleCountry);
   const countries = useSelector((state) => state.countries);
+  const api = useSelector((state) => state.api);
   const dispatch = useDispatch();
   console.log(location);
 
-  /* If the user navigates to countries/:countryName in the URL */
+  /* If the user navigates to countries/:countryName in the URL  */
+
   useEffect(() => {
     if (countries.data.length) return;
     dispatch(apiActions.fetchCountries());
   }, []);
 
   useEffect(() => {
+    if (!api.data.length || countries.data.length) return;
+    dispatch(countriesActions.getCountries(api.data));
+  }, [api.data]);
+
+  /*******************************************/
+
+  useEffect(() => {
+    if (!countries.data.length) return;
     let countrySelected = location.pathname.split("/")[2]; // COUNTRY NAME: String
 
     /* If the country name has a space E.G. United States */
@@ -38,8 +48,9 @@ const SingleCountry = () => {
     dispatch(countriesActions.handleToggleLayout("alternative")); //On single country page, always alternative view of country card
     dispatch(singleCountryActions.addCountryChosenToState(countrySelectedObj)); //Pass obj to state
     dispatch(singleCountryActions.getCountryInfo(countrySelected)); //Pass countryName:string, then iterate assets/data.js based on country name, to find additional country info (cities, trends)
+
     //Now Loading is false
-  }, []);
+  }, [countries.data]);
 
   return (
     <>

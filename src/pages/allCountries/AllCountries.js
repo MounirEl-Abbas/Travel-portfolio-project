@@ -15,7 +15,9 @@ const AllCountries = () => {
     dispatch(apiActions.fetchCountries());
   }, []);
   useEffect(() => {
-    api.data.length && dispatch(countriesActions.getCountries(api.data));
+    if (!api.data.length) return;
+
+    dispatch(countriesActions.getCountries(api.data));
   }, [api.data]);
 
   /* Countries are Rendered conditionally */

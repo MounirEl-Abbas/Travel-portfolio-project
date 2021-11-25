@@ -11,7 +11,7 @@ const AllCountries = () => {
   const api = useSelector((state) => state.api);
   const dispatch = useDispatch();
 
-  useEffect(async () => {
+  useEffect(() => {
     dispatch(apiActions.fetchCountries());
   }, []);
   useEffect(() => {

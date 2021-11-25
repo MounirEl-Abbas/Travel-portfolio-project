@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 const EachCountry = ({ country }) => {
   const countries = useSelector((state) => state.countries);
-
+  console.log(`country`, country);
   return (
     <article
       className={`${

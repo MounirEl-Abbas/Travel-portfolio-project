@@ -11,11 +11,13 @@ const AllCountries = () => {
   const api = useSelector((state) => state.api);
   const dispatch = useDispatch();
 
-  useEffect(async () => {
+  useEffect(() => {
     dispatch(apiActions.fetchCountries());
   }, []);
   useEffect(() => {
-    api.data.length && dispatch(countriesActions.getCountries(api.data));
+    if (!api.data.length) return;
+
+    dispatch(countriesActions.getCountries(api.data));
   }, [api.data]);
 
   /* Countries are Rendered conditionally */

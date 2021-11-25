@@ -1,29 +1,19 @@
-import {
-  FETCH_API_REQUEST,
-  FETCH_API_SUCCESS,
-  FETCH_API_FAILURE,
-} from "./singleCountryTypes";
+import { ADD_CHOSEN_COUNTRY, GET_COUNTRY_INFO } from "./singleCountryTypes";
 
-export const fetchApiRequest = () => {
+export const addCountryChosenToState = (countryObj) => {
   return (dispatch) => {
     dispatch({
-      type: FETCH_API_REQUEST,
+      type: ADD_CHOSEN_COUNTRY,
+      payload: countryObj,
     });
   };
 };
-export const fetchApiSuccess = (data) => {
+
+export const getCountryInfo = (countryName) => {
   return (dispatch) => {
     dispatch({
-      type: FETCH_API_SUCCESS,
-      payload: data,
-    });
-  };
-};
-export const fetchApiRequest = (error) => {
-  return (dispatch) => {
-    dispatch({
-      type: FETCH_API_FAILURE,
-      payload: error,
+      type: GET_COUNTRY_INFO,
+      payload: countryName,
     });
   };
 };

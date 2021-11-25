@@ -21,10 +21,6 @@ const SingleCountry = () => {
     dispatch(apiActions.fetchCountries());
   }, []);
 
-  const testFunc = () => {
-    console.log("ok");
-  };
-  testFunc();
   useEffect(() => {
     let countrySelected = location.pathname.split("/")[2]; // COUNTRY NAME: String
 

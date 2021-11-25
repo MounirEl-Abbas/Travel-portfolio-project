@@ -4,6 +4,7 @@ import { BrowserRouter as Switch, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import AllCountries from "./pages/allCountries/AllCountries";
 import SingleCountry from "./pages/singleCountry/SingleCountry";
+import City from "./pages/City/City";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/countries" element={<AllCountries />} />
           <Route path="/countries/:countryName" element={<SingleCountry />} />
+          <Route path="/countries/:countryName/:city" element={<City />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

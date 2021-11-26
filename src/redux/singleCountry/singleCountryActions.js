@@ -1,4 +1,9 @@
-import { ADD_CHOSEN_COUNTRY, GET_COUNTRY_INFO } from "./singleCountryTypes";
+import {
+  ADD_CHOSEN_COUNTRY,
+  GET_COUNTRY_INFO,
+  SET_CURRENT_CITY,
+  GET_CURRENT_CITY_INFO,
+} from "./singleCountryTypes";
 
 export const addCountryChosenToState = (countryObj) => {
   return (dispatch) => {
@@ -14,6 +19,24 @@ export const getCountryInfo = (countryName) => {
     dispatch({
       type: GET_COUNTRY_INFO,
       payload: countryName,
+    });
+  };
+};
+
+export const setCurrentCity = (cityObj) => {
+  return (dispatch) => {
+    dispatch({
+      type: SET_CURRENT_CITY,
+      payload: cityObj,
+    });
+  };
+};
+
+export const getCurrentCityInfo = (cityName) => {
+  return (dispatch) => {
+    dispatch({
+      type: GET_CURRENT_CITY_INFO,
+      payload: cityName,
     });
   };
 };

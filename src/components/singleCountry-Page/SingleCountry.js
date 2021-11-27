@@ -22,15 +22,15 @@ const SingleCountry = () => {
   useEffect(() => {
     if (countries.data.length) return;
     console.log("useeffect 1");
-    dispatch(apiActions.fetchCountries());
+    dispatch(apiActions.fetchCountriesAPI());
   }, []);
 
   useEffect(() => {
-    if (!api.data.length) return;
+    if (!api.countriesData.length) return;
     console.log("useeffect 2");
 
-    dispatch(countriesActions.getCountries(api.data));
-  }, [api.data]);
+    dispatch(countriesActions.getCountries(api.countriesData));
+  }, [api.countriesData]);
 
   /*******************************************/
   /* 

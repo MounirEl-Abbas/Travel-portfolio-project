@@ -10,13 +10,13 @@ const AllCountriesPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(apiActions.fetchCountries());
+    dispatch(apiActions.fetchCountriesAPI());
   }, []);
   useEffect(() => {
-    if (!api.data.length) return;
+    if (!api.countriesData.length) return;
 
-    dispatch(countriesActions.getCountries(api.data));
-  }, [api.data]);
+    dispatch(countriesActions.getCountries(api.countriesData));
+  }, [api.countriesData]);
 
   /* Countries are Rendered conditionally */
   let countriesToDisplay = countries.data;

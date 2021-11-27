@@ -1,7 +1,7 @@
 import React from "react";
-import { BiSearch, RiLayoutGridFill, HiMenuAlt1 } from "../../assets";
+import { BiSearch, RiLayoutGridFill, HiMenuAlt1 } from "../../../assets";
 import { useSelector, useDispatch } from "react-redux";
-import { countriesActions } from "../../redux";
+import { countriesActions } from "../../../redux";
 import { bindActionCreators } from "redux";
 
 const FilterButtons = () => {

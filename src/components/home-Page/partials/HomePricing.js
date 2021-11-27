@@ -1,6 +1,11 @@
 import React from "react";
 
-import { BsLightningFill, FiUser, FaHeart, IoIosBusiness } from "../../assets";
+import {
+  BsLightningFill,
+  FiUser,
+  FaHeart,
+  IoIosBusiness,
+} from "../../../assets";
 
 const HomePricing = () => {
   return (

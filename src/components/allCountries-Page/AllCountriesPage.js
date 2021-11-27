@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { countriesActions } from "../../redux";
-import { apiActions } from "../../redux";
-import FilterButtons from "./FilterButtons";
-import { Link } from "react-router-dom";
-import EachCountry from "./EachCountry";
+import { apiActions, countriesActions } from "../../redux";
+import FilterButtons from "./partials/FilterButtons";
+import AllCountriesContainer from "./partials/AllCountriesContainer";
 
-const AllCountries = () => {
+const AllCountriesPage = () => {
   const countries = useSelector((state) => state.countries);
   const api = useSelector((state) => state.api);
   const dispatch = useDispatch();
@@ -44,21 +42,13 @@ const AllCountries = () => {
       ) : countriesToDisplay.length === 0 ? (
         <h2> No Countries match your search criteria</h2>
       ) : (
-        <section className="all-countries">
-          {countriesToDisplay.map((country) => {
-            return (
-              <Link to={`${country.name.common}`}>
-                <EachCountry country={country} />
-              </Link>
-            );
-          })}
-        </section>
+        <AllCountriesContainer countries={countriesToDisplay} />
       )}
     </main>
   );
 };
 
-export default AllCountries;
+export default AllCountriesPage;
 
 // import { bindActionCreators } from "redux";
 

@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router";
-import EachCountry from "../allCountries/EachCountry";
+import CountryCard from "../CountryCard";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import CountryCities from "./partials/CountryCities";
 import {
   singleCountryActions,
   countriesActions,
   apiActions,
 } from "../../redux";
+import CountryTrends from "./partials/CountryTrends";
 
 const SingleCountry = () => {
   const location = useLocation(); // pathname:'/countries/COUNTY'
@@ -71,28 +72,12 @@ if !countries.data.length (empty) or countryInfo.length
       ) : (
         <main>
           <header>HERO</header>
-          <EachCountry country={singleCountry.countryObj} />
-          <section className="country-trends">
-            <img src={singleCountry.countryInfo.trends.frameworkTrend} alt="" />
-            <img src={singleCountry.countryInfo.trends.languageTrend} alt="" />
-          </section>
-          <section className="country-cities">
-            {singleCountry.countryInfo.cities.map((city) => {
-              return (
-                <Link
-                  to={`${city.cityName}`}
-                  onClick={() =>
-                    dispatch(singleCountryActions.setCurrentCity(city))
-                  }
-                >
-                  <article>
-                    <h4>{city.cityName}</h4>
-                    <img src={city.images[0]} alt="" />
-                  </article>
-                </Link>
-              );
-            })}
-          </section>
+          <CountryCard country={singleCountry.countryObj} />
+          <CountryTrends trends={singleCountry.countryInfo.trends} />
+          <CountryCities
+            cities={singleCountry.countryInfo.cities}
+            setCurrentCity={singleCountryActions.setCurrentCity}
+          />
         </main>
       )}
     </>

@@ -1,9 +1,9 @@
 import React from "react";
 
 //Components
-import HomeHero from "./HomeHero";
-import HomeFeatures from "./HomeFeatures";
-import HomePricing from "./HomePricing";
+import HomeHero from "./partials/HomeHero";
+import HomeFeatures from "./partials/HomeFeatures";
+import HomePricing from "./partials/HomePricing";
 
 const Home = () => {
   return (

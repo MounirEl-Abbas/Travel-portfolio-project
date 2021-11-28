@@ -11,10 +11,19 @@ import {
   FETCH_API_FAILURE,
 } from "./apiTypes";
 
+//Fetch API trycatch
 export const fetchAPIRequest = () => {
   return (dispatch) => {
     dispatch({
       type: FETCH_API_REQUEST,
+    });
+  };
+};
+export const fetchAPIFailure = (error) => {
+  return (dispatch) => {
+    dispatch({
+      type: FETCH_API_FAILURE,
+      payload: error,
     });
   };
 };
@@ -24,6 +33,16 @@ export const fetchCountriesAPISuccess = (data) => {
   return (dispatch) => {
     dispatch({
       type: FETCH_COUNTRIES_API_SUCCESS,
+      payload: data,
+    });
+  };
+};
+
+//TicketMaster API
+export const fetchTicketMasterApiSuccess = (data) => {
+  return (dispatch) => {
+    dispatch({
+      type: FETCH_TICKETMASTER_API_SUCCESS,
       payload: data,
     });
   };
@@ -64,25 +83,10 @@ export const toggleForecastView = () => {
     });
   };
 };
-export const fetchTicketMasterApiSuccess = (data) => {
-  return (dispatch) => {
-    dispatch({
-      type: FETCH_TICKETMASTER_API_SUCCESS,
-      payload: data,
-    });
-  };
-};
 
-export const fetchAPIFailure = (error) => {
-  return (dispatch) => {
-    dispatch({
-      type: FETCH_API_FAILURE,
-      payload: error,
-    });
-  };
-};
+/*******************************************************/
 
-//Func
+//Try-Catch Fetch APIs
 export const fetchCountriesAPI = () => {
   return async (dispatch) => {
     dispatch(fetchAPIRequest());
@@ -92,6 +96,21 @@ export const fetchCountriesAPI = () => {
       );
 
       dispatch(fetchCountriesAPISuccess(response.data));
+    } catch (error) {
+      fetchAPIFailure(error.message);
+    }
+  };
+};
+
+export const fetchTicketMasterAPI = (countryCode, ticketMasterAPIKey) => {
+  return async (dispatch) => {
+    dispatch(fetchAPIRequest());
+    try {
+      const response = await axios.get(
+        `https://app.ticketmaster.com/discovery/v2/suggest.json?countryCode=${countryCode}&apikey=${ticketMasterAPIKey}`
+      );
+
+      dispatch(fetchTicketMasterApiSuccess(response.data._embedded.events));
     } catch (error) {
       fetchAPIFailure(error.message);
     }
@@ -158,32 +177,3 @@ export const fetchForecastWeather = (cityName, weatherAPIKey) => {
     }
   };
 };
-
-export const fetchTicketMasterAPI = (countryCode, ticketMasterAPIKey) => {
-  return async (dispatch) => {
-    dispatch(fetchAPIRequest());
-    try {
-      const response = await axios.get(
-        `https://app.ticketmaster.com/discovery/v2/suggest.json?countryCode=${countryCode}&apikey=${ticketMasterAPIKey}`
-      );
-
-      dispatch(fetchTicketMasterApiSuccess(response.data._embedded.events));
-    } catch (error) {
-      fetchAPIFailure(error.message);
-    }
-  };
-};
-
-/* 
-.events
-  >dates.start.localData
-  >dates.start.localTime  x
-  >id
-  >images[0]
-  >name
-  url
-
-    .embedded.venues
-    .embedded.attractions
-
-*/

@@ -7,10 +7,10 @@ import {
 
 const initialState = {
   loading: false,
+  defaultLayout: true,
+  searchTerm: "",
   data: [],
   error: "",
-  searchTerm: "",
-  defaultLayout: true,
 };
 
 const reducer = (state = initialState, action) => {

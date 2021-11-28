@@ -1,12 +1,12 @@
 import { BrowserRouter as Switch, Routes, Route } from "react-router-dom";
 
-//pages
-import Home from "./pages/home/Home";
-import AllCountries from "./pages/allCountries/AllCountries";
-import SingleCountry from "./pages/singleCountry/SingleCountry";
-import City from "./pages/City/City";
-import About from "./pages/About";
-import NotFound from "./pages/NotFound";
+//components
+import Home from "./components/home-Page/Home";
+import AllCountries from "./components/allCountries-Page/AllCountriesPage";
+import SingleCountry from "./components/singleCountry-Page/SingleCountry";
+import City from "./components/city-Page/City";
+import About from "./components/about-Page/About";
+import NotFound from "./components/error-Page/NotFound";
 
 //components
 import Navbar from "./components/Navbar";

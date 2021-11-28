@@ -1,5 +1,5 @@
 import React from "react";
-import { HeroImg_Main, HeroImg_Accent } from "../../assets";
+import { HeroImg_Main, HeroImg_Accent } from "../../../assets";
 
 const HomeHero = () => {
   return (

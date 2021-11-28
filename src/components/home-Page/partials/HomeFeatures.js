@@ -1,7 +1,7 @@
 import React from "react";
 
 //Images
-import { FeaturesImg } from "../../assets";
+import { FeaturesImg } from "../../../assets";
 
 //Icons
 import {
@@ -9,7 +9,7 @@ import {
   GiStairsGoal,
   GiArchiveRegister,
   AiOutlineStar,
-} from "../../assets";
+} from "../../../assets";
 
 const HomeFeatures = () => {
   return (

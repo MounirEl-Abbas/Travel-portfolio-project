@@ -166,10 +166,8 @@ export const fetchTicketMasterAPI = (countryCode, ticketMasterAPIKey) => {
       const response = await axios.get(
         `https://app.ticketmaster.com/discovery/v2/suggest.json?countryCode=${countryCode}&apikey=${ticketMasterAPIKey}`
       );
-      console.log(response.data);
-      console.log(`response@@@@@@@@@`, response.data._embedded.events);
 
-      dispatch(fetchTicketMasterApiSuccess(response.data));
+      dispatch(fetchTicketMasterApiSuccess(response.data._embedded.events));
     } catch (error) {
       fetchAPIFailure(error.message);
     }

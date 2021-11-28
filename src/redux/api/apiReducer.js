@@ -13,6 +13,7 @@ const initialState = {
   loading: false,
   isForecast: false,
   countriesData: [],
+  ticketMasterData: [],
   mapsData: "",
   currentWeather: {},
   forecastWeather: [],
@@ -70,7 +71,11 @@ const reducer = (state = initialState, action) => {
       return state;
 
     case FETCH_TICKETMASTER_API_SUCCESS:
-      return state;
+      return {
+        ...state,
+        ticketMasterData: action.payload,
+        loading: false,
+      };
     case FETCH_API_FAILURE:
       return {
         loading: false,

@@ -6,11 +6,9 @@ import {
 } from "./countriesTypes";
 
 const initialState = {
-  loading: false,
   defaultLayout: true,
   searchTerm: "",
   data: [],
-  error: "",
 };
 
 const reducer = (state = initialState, action) => {

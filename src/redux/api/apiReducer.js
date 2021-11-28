@@ -1,12 +1,12 @@
 import {
   FETCH_API_REQUEST,
+  FETCH_API_FAILURE,
   FETCH_COUNTRIES_API_SUCCESS,
+  FETCH_TICKETMASTER_API_SUCCESS,
   FETCH_MAPS_API_SUCCESS,
   FETCH_WEATHER_CURRENT_API_SUCCESS,
   FETCH_WEATHER_FORECAST_API_SUCCESS,
   TOGGLE_WEATHER_FORECAST_VIEW,
-  FETCH_TICKETMASTER_API_SUCCESS,
-  FETCH_API_FAILURE,
 } from "./apiTypes";
 
 const initialState = {
@@ -33,6 +33,12 @@ const reducer = (state = initialState, action) => {
         loading: false,
         countriesData: action.payload,
         error: "",
+      };
+    case FETCH_TICKETMASTER_API_SUCCESS:
+      return {
+        ...state,
+        ticketMasterData: action.payload,
+        loading: false,
       };
     case FETCH_MAPS_API_SUCCESS:
       return {
@@ -70,17 +76,12 @@ const reducer = (state = initialState, action) => {
       }
       return state;
 
-    case FETCH_TICKETMASTER_API_SUCCESS:
-      return {
-        ...state,
-        ticketMasterData: action.payload,
-        loading: false,
-      };
     case FETCH_API_FAILURE:
       return {
         loading: false,
         isForecast: false,
         countriesData: [],
+        ticketMasterData: [],
         mapsData: "",
         currentWeather: {},
         forecastWeather: [],

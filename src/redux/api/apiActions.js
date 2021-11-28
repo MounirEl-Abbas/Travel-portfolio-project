@@ -7,6 +7,7 @@ import {
   FETCH_WEATHER_CURRENT_API_SUCCESS,
   FETCH_WEATHER_FORECAST_API_SUCCESS,
   TOGGLE_WEATHER_FORECAST_VIEW,
+  FETCH_TICKETMASTER_API_SUCCESS,
   FETCH_API_FAILURE,
 } from "./apiTypes";
 
@@ -63,6 +64,14 @@ export const toggleForecastView = () => {
     });
   };
 };
+export const fetchTicketMasterApiSuccess = (data) => {
+  return (dispatch) => {
+    dispatch({
+      type: FETCH_TICKETMASTER_API_SUCCESS,
+      payload: data,
+    });
+  };
+};
 
 export const fetchAPIFailure = (error) => {
   return (dispatch) => {
@@ -89,34 +98,7 @@ export const fetchCountriesAPI = () => {
   };
 };
 
-export const fetchMapsAPI = (countryName, cityName, mapsAPIKey) => {
-  let countryCode;
-  switch (countryName) {
-    case "Italy":
-      countryCode = "IT";
-      break;
-    case "Germany":
-      countryCode = "DE";
-      break;
-    case "France":
-      countryCode = "FR";
-      break;
-    case "Austria":
-      countryCode = "AT";
-      break;
-    case "Switzerland":
-      countryCode = "CH";
-      break;
-    case "United States":
-      countryCode = "US";
-      break;
-    case "Canada":
-      countryCode = "CA";
-      break;
-    default:
-      countryCode = "";
-      break;
-  }
+export const fetchMapsAPI = (countryCode, cityName, mapsAPIKey) => {
   return async (dispatch) => {
     dispatch(fetchAPIRequest());
     try {
@@ -176,3 +158,34 @@ export const fetchForecastWeather = (cityName, weatherAPIKey) => {
     }
   };
 };
+
+export const fetchTicketMasterAPI = (countryCode, ticketMasterAPIKey) => {
+  return async (dispatch) => {
+    dispatch(fetchAPIRequest());
+    try {
+      const response = await axios.get(
+        `https://app.ticketmaster.com/discovery/v2/suggest.json?countryCode=${countryCode}&apikey=${ticketMasterAPIKey}`
+      );
+      console.log(response.data);
+      console.log(`response@@@@@@@@@`, response.data._embedded.events);
+
+      dispatch(fetchTicketMasterApiSuccess(response.data));
+    } catch (error) {
+      fetchAPIFailure(error.message);
+    }
+  };
+};
+
+/* 
+.events
+  >dates.start.localData
+  >dates.start.localTime  x
+  >id
+  >images[0]
+  >name
+  url
+
+    .embedded.venues
+    .embedded.attractions
+
+*/

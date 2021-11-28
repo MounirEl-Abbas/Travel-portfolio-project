@@ -5,6 +5,7 @@ import {
   FETCH_WEATHER_CURRENT_API_SUCCESS,
   FETCH_WEATHER_FORECAST_API_SUCCESS,
   TOGGLE_WEATHER_FORECAST_VIEW,
+  FETCH_TICKETMASTER_API_SUCCESS,
   FETCH_API_FAILURE,
 } from "./apiTypes";
 
@@ -66,6 +67,9 @@ const reducer = (state = initialState, action) => {
           isForecast: true,
         };
       }
+      return state;
+
+    case FETCH_TICKETMASTER_API_SUCCESS:
       return state;
     case FETCH_API_FAILURE:
       return {

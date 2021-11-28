@@ -5,6 +5,7 @@ import { singleCountryActions, apiActions } from "../../redux";
 import CityInfo from "./partials/CityInfo";
 import CitySlider from "./partials/CitySlider";
 import CityWeather from "./partials/CityWeather";
+import { getCountryCode } from "../../utils/getCountryCode";
 
 const City = () => {
   const location = useLocation();
@@ -26,13 +27,13 @@ const City = () => {
   }, []);
 
   useEffect(() => {
-    console.log("maps/weather use effect");
     /******************** GET GOOGLE MAPS OF CITY *********************/
     const mapsAPIKey = process.env.REACT_APP_GOOGLEMAPS_API_KEY;
     const cityName = singleCountry.currentCityObj.cityName;
     const countryName = singleCountry.countryObj.name.common;
+    const countryCode = getCountryCode(countryName);
 
-    dispatch(apiActions.fetchMapsAPI(countryName, cityName, mapsAPIKey));
+    dispatch(apiActions.fetchMapsAPI(countryCode, cityName, mapsAPIKey));
     /********************************************************************/
     /********************* GET WEATHER OF CITY ************************/
     const weatherAPIKey = process.env.REACT_APP_WEATHER_API_KEY;
@@ -67,7 +68,7 @@ const City = () => {
               dispatch={dispatch}
             />
           )}
-          <section>FLIGHT API</section>
+          <section>TICKETMASTER API</section>
           <section>HOTEL API</section>
         </main>
       )}
@@ -80,6 +81,10 @@ export default City;
 /*
 *********Hotel API************
 https://rapidapi.com/apidojo/api/hotels4
+
+
+*********TICKETMASTER************
+https://app.ticketmaster.com/discovery/v2/suggest.json?countryCode=IT&apikey=k0vHmkDwXrQEndw8WiaRuEnoHQLDMGHn
 
 
 *********Flights API************

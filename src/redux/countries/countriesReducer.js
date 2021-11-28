@@ -10,7 +10,6 @@ const initialState = {
   defaultLayout: true,
   searchTerm: "",
   data: [],
-  error: "",
 };
 
 const reducer = (state = initialState, action) => {

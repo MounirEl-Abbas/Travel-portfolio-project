@@ -3,6 +3,8 @@ import { useLocation } from "react-router";
 import CountryCard from "../CountryCard";
 import { useSelector, useDispatch } from "react-redux";
 import CountryCities from "./partials/CountryCities";
+import { getCountryCode } from "../../utils/getCountryCode";
+
 import {
   singleCountryActions,
   countriesActions,
@@ -35,7 +37,7 @@ const SingleCountry = () => {
   /*******************************************/
   /* 
 if countries.data.length is full, return
-if !countries.data.length (empty) or countryInfo.length 
+if !countries.data.length (empty) continue
 */
 
   useEffect(() => {
@@ -64,6 +66,14 @@ if !countries.data.length (empty) or countryInfo.length
 
     //Now Loading is false
   }, [countries.data]);
+
+  useEffect(() => {
+    if (!Object.keys(singleCountry.countryObj).length) return;
+    const countryName = singleCountry.countryObj.name.common;
+    const countryCode = getCountryCode(countryName);
+    const ticketMasterAPIKey = process.env.REACT_APP_TICKET_MASTER_API_KEY;
+    dispatch(apiActions.fetchTicketMasterAPI(countryCode, ticketMasterAPIKey));
+  }, [singleCountry.countryObj]);
 
   return (
     <>

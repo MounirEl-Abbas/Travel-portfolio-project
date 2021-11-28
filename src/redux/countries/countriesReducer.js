@@ -6,7 +6,6 @@ import {
 } from "./countriesTypes";
 
 const initialState = {
-  loading: false,
   defaultLayout: true,
   searchTerm: "",
   data: [],

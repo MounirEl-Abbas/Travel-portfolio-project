@@ -11,6 +11,7 @@ import {
   apiActions,
 } from "../../redux";
 import CountryTrends from "./partials/CountryTrends";
+import CountryTicketMaster from "./partials/CountryTicketMaster";
 
 const SingleCountry = () => {
   const location = useLocation(); // pathname:'/countries/COUNTY'
@@ -84,6 +85,7 @@ if !countries.data.length (empty) continue
           <header>HERO</header>
           <CountryCard country={singleCountry.countryObj} />
           <CountryTrends trends={singleCountry.countryInfo.trends} />
+          <CountryTicketMaster events={api.ticketMasterData} />
           <CountryCities
             cities={singleCountry.countryInfo.cities}
             setCurrentCity={singleCountryActions.setCurrentCity}

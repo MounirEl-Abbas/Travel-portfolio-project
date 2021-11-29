@@ -1,0 +1,13 @@
+.menu-btn {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 5;
+  color: $accent-color;
+
+  &-cross {
+    color: rgb(180, 39, 39);
+  }
+}

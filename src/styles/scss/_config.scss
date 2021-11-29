@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap");
+$font-family: "Barlow", sans-serif;
+$text-color2: #cfb784;
+$text-color3: #eadeb8;
+$shade1: #c7bea2;
+$shade2: #e5dcc3;
+
+$abs-white: #fff;
+$abs-black: #000;
+
+$title-color: #222831;
+$text-color: #393e46;
+$bg-color: #eaeaea;
+$accent-color: #c56824;
+$comp-color: #a09f57;
+
+%home-page-accent-button {
+  border: 3px solid $accent-color;
+  background-color: $accent-color;
+  padding: 1rem 1.8rem;
+  color: $abs-white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s all linear;
+  &:hover {
+    background-color: transparent;
+    color: $accent-color;
+  }
+}

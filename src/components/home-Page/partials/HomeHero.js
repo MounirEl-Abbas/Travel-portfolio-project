@@ -12,11 +12,11 @@ const HomeHero = () => {
             molestiae deleniti facere dignissimos numquam quaerat eligendi? Ex
             corrupti dolorum modi quaerat, facere consequuntur explicabo!
           </p>
-          <div className="hero-content-btns">
-            <button>Explore</button>
-            <button>Learn More</button>
-          </div>
-          <p>By signing up, you agree with the Terms of Service</p>
+          <article className="hero-content-call-to-action">
+            <div className="hero-content-btns">
+              <button>Explore</button>
+            </div>
+          </article>
         </article>
         <article className="hero-content-images">
           <img src={HeroImg_Main} alt="" />

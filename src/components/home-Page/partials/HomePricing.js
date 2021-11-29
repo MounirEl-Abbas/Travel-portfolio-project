@@ -14,7 +14,7 @@ const HomePricing = () => {
         <p>Pricing Plan</p>
         <h2>Clear & Simple</h2>
       </header>
-      <main style={{ display: "flex", justifyContent: "space-around" }}>
+      <main>
         <article>
           <h4>Free</h4>
           <p>$0/month</p>

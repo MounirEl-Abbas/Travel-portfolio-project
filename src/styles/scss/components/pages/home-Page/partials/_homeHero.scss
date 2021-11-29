@@ -1,0 +1,76 @@
+.home-page-hero {
+  background-image: url("../../assets/images/hero2-bg-sm.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+.hero-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.hero-content-title {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 75%;
+  margin: auto;
+  position: relative;
+  &::after {
+    content: url("../../assets/images/plane-bg.PNG");
+    position: absolute;
+    bottom: 70%;
+    left: 0;
+    right: 0;
+    mix-blend-mode: soft-light;
+    margin: auto;
+  }
+  h1 {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 2.4rem;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -2rem;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 100%;
+      height: 2px;
+      background-color: rgba(207, 207, 247, 0.137);
+    }
+  }
+  p {
+    line-height: 1.3;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 900px;
+  }
+
+  button {
+    @extend %home-page-accent-button;
+  }
+}
+
+.hero-content-images {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  img:first-of-type {
+    display: none;
+  }
+  img:last-of-type {
+    position: absolute;
+    width: 90%;
+    left: 0;
+    right: 0;
+    bottom: -100px;
+    max-width: 250px;
+    margin: 0 auto;
+    border-radius: 50%;
+    box-shadow: 0 20px 20px 2px rgba($color: #000000, $alpha: 0.3);
+  }
+}

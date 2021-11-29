@@ -1,0 +1,46 @@
+.navbar {
+  position: absolute;
+  top: 0;
+  display: flex;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  width: 100%;
+  padding: 10px 20px;
+  z-index: 9;
+  &-logo-container {
+    width: 30%;
+  }
+  &-routes-container {
+    width: 40%;
+  }
+  &-log-btns {
+    width: 30%;
+  }
+}
+
+.navbar-logo-container img {
+  max-width: 200px;
+}
+
+.navbar-routes-container {
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+.navbar-log-btns {
+  display: flex;
+  justify-content: flex-end;
+
+  button:first-of-type {
+    text-decoration: underline;
+    letter-spacing: 0.5px;
+  }
+  button:last-of-type {
+    padding: 10px 30px;
+    border: 3px solid red;
+    border-radius: 20px;
+    margin-left: 10px;
+  }
+}

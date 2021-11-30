@@ -1,5 +1,12 @@
 import React from "react";
-import { HeroImg_Main, HeroImg_Accent } from "../../../assets";
+import {
+  HeroImg_Main,
+  HeroImg_Accent,
+  airCanada,
+  canadianNorth,
+  westJet,
+  expedia,
+} from "../../../assets";
 
 const HomeHero = () => {
   return (
@@ -22,6 +29,12 @@ const HomeHero = () => {
           <img src={HeroImg_Main} alt="" />
           <img src={HeroImg_Accent} alt="" />
         </article>
+      </div>
+      <div className="hero-companies">
+        <img src={airCanada} alt="" />
+        <img src={westJet} alt="" />
+        <img src={canadianNorth} alt="" />
+        <img src={expedia} alt="" />
       </div>
     </section>
   );

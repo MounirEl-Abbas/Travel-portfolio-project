@@ -19,51 +19,51 @@ const HomeFeatures = () => {
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum maxime
           dolor est earum tempora, totam blanditiis repellat perspiciatis ipsa
-          qui, sint saepe, iure accusamus aliquam ut tenetur praesentium
-          aliquid. Dignissimos eveniet et asperiores vel quam libero dicta
-          officia, officiis dolorem!
+          qui!
         </p>
       </article>
       <div className="features-img">
         <img src={FeaturesImg} alt="" />
       </div>
-      <article>
-        <GiCompass />
-        <h4>Mission</h4>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-          perferendis aperiam numquam qui, odit, alias voluptate, nisi
-          distinctio ad quidem a omnis tempora corrupti soluta?
-        </p>
-      </article>
-      <article>
-        <AiOutlineStar />
-        <h4>Happy Customers</h4>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-          perferendis aperiam numquam qui, odit, alias voluptate, nisi
-          distinctio ad quidem a omnis tempora corrupti soluta?
-        </p>
-      </article>
-      <article>
-        <GiStairsGoal />
-        <h4>Vision</h4>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque iure
-          expedita dolorem cum natus harum facere! Doloremque ducimus voluptatem
-          fugiat?
-        </p>
-      </article>
-      <article>
-        <GiArchiveRegister />
-        <h4>Guarantee</h4>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-          veritatis error deleniti corporis pariatur nam facere repudiandae est
-          repellendus consequatur laudantium doloribus ab labore a minus placeat
-          quos, amet adipisci?
-        </p>
-      </article>
+      <section className="features-container">
+        <article className="feature">
+          <GiCompass />
+          <h4>Mission</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+            perferendis aperiam numquam qui, odit, alias voluptate, nisi
+            distinctio ad quidem a omnis tempora corrupti soluta.
+          </p>
+        </article>
+        <article className="feature">
+          <AiOutlineStar />
+          <h4>Happy Customers</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+            perferendis aperiam numquam qui, odit, alias voluptate, nisi
+            distinctio ad quidem a omnis tempora corrupti soluta!
+          </p>
+        </article>
+        <article className="feature">
+          <GiStairsGoal />
+          <h4>Vision</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque iure
+            expedita dolorem cum natus harum facere! Doloremque ducimus
+            voluptatem fugiat?
+          </p>
+        </article>
+        <article className="feature">
+          <GiArchiveRegister />
+          <h4>Guarantee</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
+            veritatis error deleniti corporis pariatur nam facere repudiandae
+            est repellendus consequatur laudantium doloribus ab labore a minus
+            placeat quos, amet adipisci!
+          </p>
+        </article>
+      </section>
     </section>
   );
 };

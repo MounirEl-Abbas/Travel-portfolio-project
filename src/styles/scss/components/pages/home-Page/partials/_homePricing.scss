@@ -1,0 +1,73 @@
+.home-page-pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+
+  header {
+    margin-bottom: 1rem;
+    text-align: center;
+    p {
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+    h2 {
+      letter-spacing: 1px;
+    }
+  }
+}
+.home-pricing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  article {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: 2.5rem 1rem;
+    text-align: center;
+    width: 200px;
+    p {
+      color: $comp-color;
+      font-size: 0.7rem;
+      padding: 5px 0;
+    }
+    i {
+      background-color: #dadada;
+      border-radius: 50%;
+      height: 8rem;
+      width: 8rem;
+      margin: auto;
+      display: flex;
+      place-items: center;
+      justify-content: center;
+      margin: 2rem auto;
+      svg {
+        font-size: 4rem;
+        color: #888;
+      }
+    }
+    button {
+      font-weight: 600;
+      margin: 0 auto 2rem auto;
+      color: $accent-color;
+    }
+
+    ul li {
+      margin: 0.5rem 0;
+    }
+
+    .not-offered {
+      text-decoration: line-through;
+      color: $comp-color;
+    }
+  }
+  #accent-btn {
+    @extend %home-page-accent-button;
+    text-transform: none;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+  }
+}

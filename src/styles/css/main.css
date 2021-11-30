@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap");
-.navbar-log-btns button:last-of-type, .sidemenu-log-btns button:last-of-type, .hero-content-title button {
+.navbar-log-btns button:last-of-type, .sidemenu-log-btns button:last-of-type, .hero-content-title button, .home-pricing-container #accent-btn {
   border: 3px solid #c56824;
   background-color: #c56824;
-  padding: 1rem 1.8rem;
+  padding: 1rem 1.5rem;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -11,7 +11,7 @@
   transition: 0.3s all linear;
 }
 
-.navbar-log-btns button:hover:last-of-type, .sidemenu-log-btns button:hover:last-of-type, .hero-content-title button:hover {
+.navbar-log-btns button:hover:last-of-type, .sidemenu-log-btns button:hover:last-of-type, .hero-content-title button:hover, .home-pricing-container #accent-btn:hover {
   background-color: transparent;
   color: #c56824;
 }
@@ -55,7 +55,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 h3,
@@ -70,6 +70,10 @@ a,
 span {
   font-size: 1.3rem;
   color: #393e46;
+}
+
+li {
+  list-style-type: none;
 }
 
 button {
@@ -432,6 +436,87 @@ img {
   padding: 0.5rem 0;
 }
 
+.home-page-pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.home-page-pricing header {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.home-page-pricing header p {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.home-page-pricing header h2 {
+  letter-spacing: 1px;
+}
+
+.home-pricing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.home-pricing-container article {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin: 2.5rem 1rem;
+  text-align: center;
+  width: 200px;
+}
+
+.home-pricing-container article p {
+  color: #a09f57;
+  font-size: 0.7rem;
+  padding: 5px 0;
+}
+
+.home-pricing-container article i {
+  background-color: #dadada;
+  border-radius: 50%;
+  height: 8rem;
+  width: 8rem;
+  margin: auto;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
+.home-pricing-container article i svg {
+  font-size: 4rem;
+  color: #888;
+}
+
+.home-pricing-container article button {
+  font-weight: 600;
+  margin: 0 auto 2rem auto;
+  color: #c56824;
+}
+
+.home-pricing-container article ul li {
+  margin: 0.5rem 0;
+}
+
+.home-pricing-container article .not-offered {
+  text-decoration: line-through;
+  color: #a09f57;
+}
+
+.home-pricing-container #accent-btn {
+  text-transform: none;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
 @media (min-width: 768px) {
   html {
     font-size: 14px;
@@ -506,6 +591,9 @@ img {
     border-radius: 20px;
     max-width: 300px;
   }
+  .hero-companies {
+    display: flex;
+  }
   /* HOME FEATURES */
   .features-container {
     flex-flow: row wrap;
@@ -516,8 +604,23 @@ img {
   .features-container .feature {
     height: 350px;
   }
-  .hero-companies {
-    display: flex;
+  /* HOME PRICING */
+  .home-page-pricing {
+    width: 100%;
+    max-width: 1600px;
+    margin: 10rem auto 5rem auto;
+  }
+  .home-pricing-container {
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .home-pricing-container article {
+    width: 25%;
+  }
+  .home-pricing-container article #accent-btn {
+    padding: 1rem 0.2rem;
   }
 }
 

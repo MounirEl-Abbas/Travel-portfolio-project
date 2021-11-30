@@ -72,6 +72,9 @@
       max-width: 300px;
     }
   }
+  .hero-companies {
+    display: flex;
+  }
   /* HOME FEATURES */
   .features-container {
     flex-flow: row wrap;
@@ -82,8 +85,23 @@
       height: 350px;
     }
   }
-  .hero-companies {
-    display: flex;
+  /* HOME PRICING */
+  .home-page-pricing {
+    width: 100%;
+    max-width: 1600px;
+    margin: 10rem auto 5rem auto;
+  }
+  .home-pricing-container {
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    article {
+      width: 25%;
+      #accent-btn {
+        padding: 1rem 0.2rem;
+      }
+    }
   }
 }
 

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap");
-.hero-content-title button {
+.navbar-log-btns button:last-of-type, .sidemenu-log-btns button:last-of-type, .hero-content-title button {
   border: 3px solid #c56824;
   background-color: #c56824;
   padding: 1rem 1.8rem;
@@ -11,7 +11,7 @@
   transition: 0.3s all linear;
 }
 
-.hero-content-title button:hover {
+.navbar-log-btns button:hover:last-of-type, .sidemenu-log-btns button:hover:last-of-type, .hero-content-title button:hover {
   background-color: transparent;
   color: #c56824;
 }
@@ -111,18 +111,15 @@ img {
 }
 
 .navbar-logo-container {
-  width: 30%;
+  width: 20%;
 }
 
 .navbar-routes-container {
   width: 40%;
 }
 
-.navbar-log-btns {
-  width: 30%;
-}
-
 .navbar-logo-container img {
+  width: 100%;
   max-width: 200px;
 }
 
@@ -137,16 +134,19 @@ img {
   justify-content: flex-end;
 }
 
+.navbar-log-btns button {
+  width: 130px;
+  padding: 5px;
+}
+
 .navbar-log-btns button:first-of-type {
   text-decoration: underline;
   letter-spacing: 0.5px;
+  margin-right: 2%;
 }
 
 .navbar-log-btns button:last-of-type {
-  padding: 10px 30px;
-  border: 3px solid red;
-  border-radius: 20px;
-  margin-left: 10px;
+  padding: 15px 10px;
 }
 
 .App {
@@ -172,20 +172,62 @@ img {
   transition: linear all 0.3s;
   display: flex;
   flex-direction: column;
-  width: 40%;
+  justify-content: space-evenly;
+  width: 50%;
   max-width: 250px;
-  background-color: green;
+  background-color: #e5dcc3;
+  border-right: 3px solid #c56824;
+  opacity: 0.9;
   height: 100%;
 }
 
+.sidemenu-logo-container {
+  height: 20%;
+  width: 100%;
+  text-align: center;
+}
+
+.sidemenu-logo-container img {
+  width: 80%;
+  margin: auto;
+}
+
 .sidemenu-routes-container {
+  height: 40%;
   display: flex;
   flex-direction: column;
+}
+
+.sidemenu-routes-container a {
+  display: flex;
+  align-items: center;
+  padding: 20px 10px;
+  border-top: 1px solid #c7bea2;
+}
+
+.sidemenu-routes-container a svg {
+  font-size: 15px;
+  margin-right: 5%;
+}
+
+.sidemenu-routes-container a:last-of-type {
+  border-bottom: 1px solid #c7bea2;
 }
 
 .sidemenu-log-btns {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 10%;
+}
+
+.sidemenu-log-btns button:first-of-type {
+  text-decoration: underline;
+}
+
+.sidemenu-log-btns button:last-of-type {
+  max-width: 120px;
 }
 
 .sidemenu-open {
@@ -491,17 +533,20 @@ img {
   }
   .features-container {
     width: 100%;
-    max-width: 2000px;
+    max-width: 1000px;
   }
   .features-container .feature {
     height: fit-content;
-    max-width: 350px;
+    max-width: 400px;
   }
 }
 
 @media (min-width: 2000px) {
   html {
     font-size: 20px;
+  }
+  .navbar-log-btns button {
+    width: 200px;
   }
 }
 

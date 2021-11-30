@@ -10,16 +10,22 @@ import westJet from "../assets/images/westJet.png";
 import expedia from "../assets/images/expedia.png";
 
 //Icons
-export { GiCompass, GiStairsGoal, GiArchiveRegister } from "react-icons/gi";
+export {
+  GiCompass,
+  GiStairsGoal,
+  GiArchiveRegister,
+  GiPlanetConquest,
+} from "react-icons/gi";
 export { AiOutlineStar } from "react-icons/ai";
 export { BsLightningFill, BsTwitter, BsFacebook } from "react-icons/bs";
 export { FiUser, FiMenu } from "react-icons/fi";
-export { FaHeart, FaGooglePlusG } from "react-icons/fa";
+export { FaHeart, FaGooglePlusG, FaPlane, FaUsers } from "react-icons/fa";
 export { IoIosBusiness } from "react-icons/io";
 export { BiSearch } from "react-icons/bi";
 export { RiLayoutGridFill } from "react-icons/ri";
 export { HiMenuAlt1 } from "react-icons/hi";
 export { ImCross } from "react-icons/im";
+export { MdAttachMoney } from "react-icons/md";
 
 //Export Images
 export {

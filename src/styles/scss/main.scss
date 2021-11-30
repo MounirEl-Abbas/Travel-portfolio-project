@@ -33,7 +33,7 @@ h1 {
   font-size: 2rem;
 }
 h2 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 h3,
 h4,
@@ -46,6 +46,9 @@ a,
 span {
   font-size: 1.3rem;
   color: $text-color;
+}
+li {
+  list-style-type: none;
 }
 
 button {

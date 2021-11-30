@@ -2,6 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { LogoIpsum } from "../../assets";
+import {
+  GiPlanetConquest,
+  FaPlane,
+  MdAttachMoney,
+  FaUsers,
+} from "../../assets";
 
 const Sidemenu = ({ isMenuOpen }) => {
   return (
@@ -17,10 +23,22 @@ const Sidemenu = ({ isMenuOpen }) => {
           <img src={LogoIpsum} alt="" />
         </section>
         <section className="sidemenu-routes-container">
-          <Link to="/">Home</Link>
-          <Link to="/countries">Explore</Link>
-          <HashLink to="/#pricing-section">Pricing</HashLink>
-          <Link to="/about">About</Link>
+          <Link to="/">
+            <GiPlanetConquest />
+            <span>Home</span>
+          </Link>
+          <Link to="/countries">
+            <FaPlane />
+            <span>Explore</span>
+          </Link>
+          <HashLink to="/#pricing-section">
+            <MdAttachMoney />
+            <span>Pricing</span>
+          </HashLink>
+          <Link to="/about">
+            <FaUsers />
+            <span>About</span>
+          </Link>
         </section>
         <section className="sidemenu-log-btns">
           <button>Try for free!</button>

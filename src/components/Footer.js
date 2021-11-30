@@ -6,11 +6,11 @@ import { BsTwitter, BsFacebook, FaGooglePlusG } from "../assets";
 const Footer = () => {
   return (
     <footer>
-      <div>
-        <section>
+      <div className="footer-containers">
+        <section className="footer-logo-container">
           <img src={LogoIpsum} alt="" />
         </section>
-        <section>
+        <section className="footer-navigation-container">
           <article aria-label="About">
             <Link to="/about">About Us</Link>
             <button>Blog</button>
@@ -25,10 +25,13 @@ const Footer = () => {
             <button>FAQ</button>
           </article>
         </section>
-        <section aria-label="Subscribe to our Newsletter">
+        <section
+          className="footer-socials-container"
+          aria-label="Subscribe to our Newsletter"
+        >
           <article className="newsletter">
-            <input type="email" />
-            <button>Subscribe</button>
+            <input type="email" placeholder="Enter Email..." />
+            <button id="newsletter-subscribe-btn">Subscribe</button>
           </article>
           <article className="socials">
             <i>
@@ -43,9 +46,8 @@ const Footer = () => {
           </article>
         </section>
       </div>
-      <div>
-        Be sure to take a look at our Terms of Use and Privacy Policy
-        <p></p>
+      <div className="disclaimer">
+        <p>Be sure to take a look at our Terms of Use and Privacy Policy</p>
       </div>
     </footer>
   );

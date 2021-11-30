@@ -14,7 +14,7 @@ const HomePricing = () => {
         <p>Pricing Plan</p>
         <h2>Clear & Simple</h2>
       </header>
-      <main>
+      <main className="home-pricing-container">
         <article>
           <h4>Free</h4>
           <p>$0/month</p>
@@ -24,9 +24,9 @@ const HomePricing = () => {
           <button>Get Started</button>
           <ul>
             <li>Up to 5 Members</li>
-            <li>Earn Points</li>
-            <li>Express Check-in</li>
-            <li>Flight Amenities</li>
+            <li className="not-offered">Earn Points</li>
+            <li className="not-offered">Express Check-in</li>
+            <li className="not-offered">Flight Amenities</li>
           </ul>
         </article>
         <article>
@@ -39,8 +39,8 @@ const HomePricing = () => {
           <ul>
             <li>Up to 10 Members</li>
             <li>Earn Points</li>
-            <li>Express Check-in</li>
-            <li>Flight Amenities</li>
+            <li className="not-offered">Express Check-in</li>
+            <li className="not-offered">Flight Amenities</li>
           </ul>
         </article>
         <article>
@@ -49,12 +49,12 @@ const HomePricing = () => {
           <i>
             <FaHeart />
           </i>
-          <button>Get Started</button>
+          <button id="accent-btn">Get Started</button>
           <ul>
             <li>Up to 20 Members</li>
             <li>Earn 2x Points</li>
             <li>Express Check-in</li>
-            <li>Flight Amenities</li>
+            <li className="not-offered">Flight Amenities</li>
           </ul>
         </article>
         <article>

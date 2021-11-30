@@ -4,13 +4,12 @@
 .sidemenu-container {
   height: 100%;
   width: 100%;
+  transform: translateX(-100vw);
   position: fixed;
   z-index: 4;
-  visibility: hidden;
-  transition: linear all 0.3s;
   &-open {
     background-color: rgba($color: #000000, $alpha: 0.2);
-    visibility: visible;
+    transform: translateX(0);
   }
 }
 
@@ -47,6 +46,7 @@
       svg {
         font-size: 15px;
         margin-right: 5%;
+        color: $comp-color;
       }
     }
     a:last-of-type {

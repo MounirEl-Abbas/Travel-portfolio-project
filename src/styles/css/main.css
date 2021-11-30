@@ -156,15 +156,14 @@ img {
 .sidemenu-container {
   height: 100%;
   width: 100%;
+  transform: translateX(-100vw);
   position: fixed;
   z-index: 4;
-  visibility: hidden;
-  transition: linear all 0.3s;
 }
 
 .sidemenu-container-open {
   background-color: rgba(0, 0, 0, 0.2);
-  visibility: visible;
+  transform: translateX(0);
 }
 
 .sidemenu {
@@ -208,6 +207,7 @@ img {
 .sidemenu-routes-container a svg {
   font-size: 15px;
   margin-right: 5%;
+  color: #a09f57;
 }
 
 .sidemenu-routes-container a:last-of-type {

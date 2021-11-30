@@ -15,9 +15,6 @@
   &-routes-container {
     width: 40%;
   }
-  &-log-btns {
-    // width: 35%;
-  }
 }
 
 .navbar-logo-container img {
@@ -42,11 +39,12 @@
     &:first-of-type {
       text-decoration: underline;
       letter-spacing: 0.5px;
-      margin-right: 2%;
+      // margin-right: 2%;
     }
     &:last-of-type {
       @extend %home-page-accent-button;
       padding: 15px 10px;
+      margin-left: 0.8rem;
     }
   }
 }

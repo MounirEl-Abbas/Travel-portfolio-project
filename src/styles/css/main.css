@@ -651,6 +651,17 @@ img {
   .navbar-log-btns button {
     width: 200px;
   }
+  /* Home Features */
+  .features-container {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    height: 900px;
+    max-width: 1000px;
+  }
+  .features-container .feature {
+    height: 350px;
+    max-width: 400px;
+  }
 }
 
 @media (min-width: 3000px) {

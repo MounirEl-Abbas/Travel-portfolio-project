@@ -3,8 +3,10 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { apiActions, countriesActions } from "../../redux";
 /* Components */
+import Logo from "../Logo";
 import FilterButtons from "./partials/FilterButtons";
 import AllCountriesContainer from "./partials/AllCountriesContainer";
+import AllCountriesHeader from "./partials/AllCountriesHeader";
 
 const AllCountriesPage = () => {
   const countries = useSelector((state) => state.countries);
@@ -36,6 +38,8 @@ const AllCountriesPage = () => {
 
   return (
     <main className="all-countries-page">
+      <Logo />
+      <AllCountriesHeader />
       <FilterButtons />
 
       {api.loading || countries.data.length === 0 ? (

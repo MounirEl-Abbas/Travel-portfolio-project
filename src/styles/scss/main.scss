@@ -35,7 +35,9 @@ h1 {
 h2 {
   font-size: 1.8rem;
 }
-h3,
+h3 {
+  font-size: 1.5rem;
+}
 h4,
 h5 {
   font-size: 1.3rem;
@@ -70,6 +72,6 @@ img {
 
 @import "./components/navigation/navigation";
 
-@import "./components/pages/pages";
+@import "./components/pages/pages", "./components/logo";
 
 @import "./mediaQueries";

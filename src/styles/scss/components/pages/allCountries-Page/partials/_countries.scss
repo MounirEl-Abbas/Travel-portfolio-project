@@ -1,0 +1,120 @@
+.all-countries-page-countries {
+  width: 100%;
+  background: url("../../assets/images/countries-parallax-bg-sm.jpg") no-repeat
+    center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+}
+.countries-flex-container {
+  display: flex;
+  justify-content: center;
+  max-width: 900px;
+  flex-flow: row wrap;
+  margin: 2rem auto;
+}
+.country {
+  margin: 2rem;
+  max-width: 250px;
+  width: 95%;
+  transition: linear all 0.2s;
+  box-shadow: 2px 2px 10px 5px rgba($color: #000, $alpha: 0.5);
+  border-radius: 10px;
+
+  &:hover {
+    transform: scale(0.98);
+  }
+}
+
+.country-card {
+  position: relative;
+  height: 17rem;
+  border-radius: inherit;
+  margin: auto;
+
+  .country-img-division {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+  h3 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 2.4rem;
+    color: $abs-white;
+    background-color: rgba($color: #000, $alpha: 0.5);
+    width: fit-content;
+    padding: 0.3rem;
+    border-radius: 10px 0 10px 0;
+  }
+  p {
+    display: none;
+  }
+}
+.countries-alternative-layout {
+  flex-flow: column nowrap;
+  align-items: center;
+  .country {
+    max-width: 500px;
+  }
+}
+.alternative-layout {
+  height: 15rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: $abs-white;
+  .country-img-division {
+    transform: rotateZ(-90deg);
+    width: 55%;
+    max-width: 9rem;
+    height: 60%;
+    img {
+      transform: translateX(-40%);
+      border-radius: 10px 10px 0 0;
+      width: 170%;
+    }
+  }
+  .country-info-division {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 10%;
+    width: 85%;
+    h3 {
+      padding-left: 0.7rem;
+      position: static;
+      width: 100%;
+      border-radius: 0 9px 0 0;
+    }
+    p {
+      padding-left: 0.7rem;
+      display: block;
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .all-countries-page-countries {
+    background-image: url("../../assets/images/countries-parallax-bg.jpg");
+  }
+
+  .country {
+    max-width: 350px;
+  }
+  .country-card {
+    height: 15rem;
+  }
+  .countries-alternative-layout .country {
+    max-width: 700px;
+  }
+}

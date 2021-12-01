@@ -3,6 +3,10 @@
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  &-response {
+    text-align: center;
+    padding: 5rem;
+  }
 }
 
 @import "./partials/header", "./partials/filters", "./partials/countries";

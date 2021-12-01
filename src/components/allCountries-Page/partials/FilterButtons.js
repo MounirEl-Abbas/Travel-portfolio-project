@@ -12,7 +12,7 @@ const FilterButtons = () => {
     dispatch
   );
   return (
-    <section className="countries-filters">
+    <section className="all-countries-page-filters">
       <article className="filter-search">
         <input
           type="text"

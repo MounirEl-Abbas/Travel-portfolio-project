@@ -4,7 +4,7 @@ import CountryCard from "../../CountryCard";
 
 const AllCountriesContainer = ({ countries }) => {
   return (
-    <section className="all-countries">
+    <section className="all-countries-page-countries" id="countries-container">
       {countries.map((country) => {
         return (
           <Link to={`${country.name.common}`}>

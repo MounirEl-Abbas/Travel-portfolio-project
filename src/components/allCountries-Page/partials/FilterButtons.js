@@ -14,13 +14,18 @@ const FilterButtons = () => {
   return (
     <section className="all-countries-page-filters">
       <article className="filter-search">
+        <BiSearch />
+        <label htmlFor="search-bar">Search Countries</label>
+
         <input
           type="text"
-          placeholder="Search Country..."
+          placeholder="Country name..."
+          id="search-bar"
           value={searchTerm}
           onChange={(e) => handleSearch(e.target.value)}
         />
       </article>
+
       <article className="filter-btns">
         <div className="filter-btns-sort">
           <label htmlFor="sort-by">Sort By</label>
@@ -39,9 +44,17 @@ const FilterButtons = () => {
             <option value="pop-descending">Descending (pop.)</option>
           </select>
         </div>
+
         <div className="filter-btns-layout">
-          <button onClick={() => handleToggleLayout("default")}>def</button>
-          <button onClick={() => handleToggleLayout("alternative")}>alt</button>
+          <div className="btns-container" id="btns-container">
+            <button onClick={() => handleToggleLayout("default")}>
+              <RiLayoutGridFill />
+            </button>
+            <button onClick={() => handleToggleLayout("alternative")}>
+              <HiMenuAlt1 />
+            </button>
+          </div>
+          <label htmlFor="btns-container">View</label>
         </div>
       </article>
     </section>

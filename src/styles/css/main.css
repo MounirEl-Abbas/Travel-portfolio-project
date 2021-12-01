@@ -809,18 +809,6 @@ footer div {
 }
 
 .all-countries-page-header {
-  height: 20%;
-}
-
-.all-countries-page-filters {
-  height: 10%;
-}
-
-.all-countries-page-countries {
-  height: 70%;
-}
-
-.all-countries-page-header {
   background: url("../../assets/images/allCountries-header-sm.jpg") no-repeat center;
   background-size: cover;
   height: 30rem;
@@ -848,6 +836,110 @@ footer div {
   margin: auto;
   padding: 5px;
   max-width: 200px;
+}
+
+.all-countries-page-filters {
+  height: 11rem;
+  background: linear-gradient(to bottom, #e5dcc3 0%, rgba(255, 255, 255, 0) 100%);
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.all-countries-page-filters label {
+  background-color: #c56824;
+  padding: 0.8rem;
+  border-radius: 10px 0 0 10px;
+}
+
+.all-countries-page-filters label:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+.filter-search {
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+}
+
+.filter-search input {
+  padding: 5px 0px 5px 15px;
+  background-color: transparent;
+  border: none;
+  width: 70%;
+}
+
+.filter-search input::placeholder {
+  font-size: 0.8rem;
+}
+
+.filter-search input:focus {
+  outline: none;
+}
+
+.filter-search svg {
+  position: absolute;
+  right: 0;
+  font-size: 2rem;
+  opacity: 0.2;
+}
+
+.filter-btns {
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  justify-content: space-between;
+  max-width: 900px;
+}
+
+.filter-btns-sort {
+  display: flex;
+  align-items: center;
+}
+
+.filter-btns-sort select {
+  padding: 0.8rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: 60%;
+  max-width: 500px;
+  font-size: 1rem;
+}
+
+.filter-btns-layout {
+  display: flex;
+  align-items: center;
+}
+
+.filter-btns-layout .btns-container {
+  display: flex;
+  align-items: center;
+  width: 4rem;
+  padding-top: 4px;
+  justify-content: space-evenly;
+}
+
+.filter-btns-layout .btns-container svg {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 2000px) {
+  .filter-search {
+    max-width: 900px;
+  }
+  .filter-btns {
+    max-width: 1200px;
+  }
 }
 
 @media (min-width: 768px) {

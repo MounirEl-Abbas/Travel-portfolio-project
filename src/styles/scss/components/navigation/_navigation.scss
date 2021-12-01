@@ -5,3 +5,20 @@
 
 @import "./partials/navbar", "./partials/sidemenu", "./partials/menu-btn",
   "./partials/footer";
+
+@media (min-width: 768px) {
+  /* Sidemenu to Navbar */
+  .navbar {
+    display: flex;
+  }
+  .sidemenu-container,
+  .menu-btn {
+    display: none;
+  }
+}
+
+@media (min-width: 2000px) {
+  .navbar-log-btns button {
+    width: 200px;
+  }
+}

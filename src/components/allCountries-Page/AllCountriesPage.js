@@ -43,22 +43,16 @@ const AllCountriesPage = () => {
       <FilterButtons />
 
       {api.loading || countries.data.length === 0 ? (
-        <h2>Loading...</h2>
+        <h2 className="all-countries-page-response">Loading...</h2>
       ) : !api.loading && countriesToDisplay.length === 0 ? (
-        <h2> No Countries match your search criteria</h2>
+        <h2 className="all-countries-page-response">
+          No Countries match your search criteria
+        </h2>
       ) : (
-        <AllCountriesContainer countries={countriesToDisplay} />
+        <AllCountriesContainer countriesToDisplay={countriesToDisplay} />
       )}
     </main>
   );
 };
 
 export default AllCountriesPage;
-
-// import { bindActionCreators } from "redux";
-
-// const {
-//   fetchCountriesRequest,
-//   fetchCountriesSuccess,
-//   fetchCountriesFailure,
-// } = bindActionCreators(countriesActions, dispatch);

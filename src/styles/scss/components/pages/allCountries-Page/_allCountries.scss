@@ -1,0 +1,32 @@
+.all-countries-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  &-header {
+    height: 20%;
+  }
+  &-filters {
+    height: 10%;
+  }
+  &-countries {
+    height: 70%;
+  }
+}
+
+@import "./partials/header", "./partials/filters", "./partials/countries";
+
+@media (min-width: 768px) {
+  /****************************
+  ALL COUNTRIES PAGE
+  ****************************/
+
+  .all-countries-page-header {
+    background-image: url("../../assets/images/allCountries-header.jpg");
+
+    h2 {
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+  }
+}

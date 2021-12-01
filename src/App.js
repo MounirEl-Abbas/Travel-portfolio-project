@@ -10,7 +10,6 @@ import NotFound from "./components/error-Page/NotFound";
 
 //components
 import Navigation from "./components/navigation/Navigation";
-
 import Footer from "./components/Footer";
 
 const App = () => {

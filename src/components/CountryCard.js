@@ -7,13 +7,23 @@ const CountryCard = ({ country }) => {
   return (
     <article
       className={`${
-        countries.defaultLayout ? "country" : "country alternative-layout"
+        countries.defaultLayout
+          ? "country-card"
+          : "country-card alternative-layout"
       }`}
     >
-      <img src={country.flags.png} alt="" />
-      <h3>{country.name.common}</h3>
-      <p>Capital: {country.capital}</p>
-      <p>Population: {country.population.toLocaleString()}</p>
+      <div className="country-img-division">
+        <img src={country.flags.png} alt="" />
+      </div>
+      <div className="country-info-division">
+        <h3>{country.name.common}</h3>
+        <p>
+          <span>Capital:</span> {country.capital}
+        </p>
+        <p>
+          <span>Population:</span> {country.population.toLocaleString()}
+        </p>
+      </div>
     </article>
   );
 };

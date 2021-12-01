@@ -46,8 +46,6 @@ const AllCountriesPage = () => {
         <h2>Loading...</h2>
       ) : !api.loading && countriesToDisplay.length === 0 ? (
         <h2> No Countries match your search criteria</h2>
-      ) : countries.error ? (
-        <h2>Error, could not get countries...</h2>
       ) : (
         <AllCountriesContainer countries={countriesToDisplay} />
       )}

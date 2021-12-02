@@ -93,8 +93,8 @@ if !countries.data.length (empty) continue
           <CountryTicketMaster
             events={api.ticketMasterData}
             isLoading={api.loading}
+            countryName={singleCountry.countryObj.name.common}
           />
-          <CountryTrends trends={singleCountry.countryInfo.trends} />
           <CountryCities
             cities={singleCountry.countryInfo.cities}
             setCurrentCity={singleCountryActions.setCurrentCity}

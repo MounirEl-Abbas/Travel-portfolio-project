@@ -51,7 +51,7 @@ const CountryTicketMaster = ({ events, isLoading, countryName }) => {
             }
             if (
               eventIndex === index - 1 ||
-              (index === 0 && eventIndex === event.length - 1)
+              (index === 0 && eventIndex === events.length - 1)
             ) {
               position = "lastSlide";
             }

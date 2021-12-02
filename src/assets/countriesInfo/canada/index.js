@@ -1,5 +1,3 @@
-import canadaFrameworkTrend from "./trends/frameworks-trend.png";
-import canadaLanguageTrend from "./trends/languages-trend.png";
 import ottawa1 from "./ottawa/ottawa1.jpg";
 import ottawa2 from "./ottawa/ottawa2.jpg";
 import ottawa3 from "./ottawa/ottawa3.jpg";
@@ -11,8 +9,6 @@ import montreal2 from "./montreal/montreal2.jpg";
 import montreal3 from "./montreal/montreal3.jpg";
 
 export {
-  canadaFrameworkTrend,
-  canadaLanguageTrend,
   ottawa1,
   ottawa2,
   ottawa3,

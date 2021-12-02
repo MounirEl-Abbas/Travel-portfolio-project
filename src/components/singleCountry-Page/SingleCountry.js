@@ -11,7 +11,6 @@ import {
   countriesActions,
   apiActions,
 } from "../../redux";
-import CountryTrends from "./partials/CountryTrends";
 import CountryTicketMaster from "./partials/CountryTicketMaster";
 
 const SingleCountry = () => {

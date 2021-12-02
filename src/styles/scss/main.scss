@@ -67,7 +67,12 @@ a {
   }
 }
 img {
-  width: 50px;
+  width: 200px;
+}
+
+.response {
+  text-align: center;
+  padding: 5rem;
 }
 
 @import "./components/navigation/navigation";

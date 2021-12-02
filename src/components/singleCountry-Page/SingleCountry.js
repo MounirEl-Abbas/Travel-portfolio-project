@@ -73,6 +73,7 @@ if !countries.data.length (empty) continue
     const countryName = singleCountry.countryObj.name.common;
     const countryCode = getCountryCode(countryName);
     const ticketMasterAPIKey = process.env.REACT_APP_TICKET_MASTER_API_KEY;
+    console.log(`get events@@@@@@@@@@@@`);
     dispatch(apiActions.fetchTicketMasterAPI(countryCode, ticketMasterAPIKey));
   }, [singleCountry.countryObj]);
 
@@ -85,7 +86,10 @@ if !countries.data.length (empty) continue
           <header>HERO</header>
           <CountryCard country={singleCountry.countryObj} />
           <CountryTrends trends={singleCountry.countryInfo.trends} />
-          <CountryTicketMaster events={api.ticketMasterData} />
+          <CountryTicketMaster
+            events={api.ticketMasterData}
+            isLoading={api.loading}
+          />
           <CountryCities
             cities={singleCountry.countryInfo.cities}
             setCurrentCity={singleCountryActions.setCurrentCity}

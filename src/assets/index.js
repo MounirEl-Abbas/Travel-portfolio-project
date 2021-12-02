@@ -19,7 +19,14 @@ export {
 export { AiOutlineStar } from "react-icons/ai";
 export { BsLightningFill, BsTwitter, BsFacebook } from "react-icons/bs";
 export { FiUser, FiMenu } from "react-icons/fi";
-export { FaHeart, FaGooglePlusG, FaPlane, FaUsers } from "react-icons/fa";
+export {
+  FaHeart,
+  FaGooglePlusG,
+  FaPlane,
+  FaUsers,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa";
 export { IoIosBusiness } from "react-icons/io";
 export { BiSearch } from "react-icons/bi";
 export { RiLayoutGridFill } from "react-icons/ri";

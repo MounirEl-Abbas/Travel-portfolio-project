@@ -16,6 +16,11 @@ const AllCountriesPage = () => {
   //Initial Render, get countries
   useEffect(() => {
     dispatch(apiActions.fetchCountriesAPI());
+
+    //When navigating BACK to this page, default the layout
+    if (!countries.defaultLayout) {
+      dispatch(countriesActions.handleToggleLayout("default"));
+    }
   }, []);
   //Once Fetch API is completed, get Countries in Countries Reducer
   useEffect(() => {
@@ -43,11 +48,9 @@ const AllCountriesPage = () => {
       <FilterButtons />
 
       {api.loading || countries.data.length === 0 ? (
-        <h2 className="all-countries-page-response">Loading...</h2>
+        <h2 className="response">Loading...</h2>
       ) : !api.loading && countriesToDisplay.length === 0 ? (
-        <h2 className="all-countries-page-response">
-          No Countries match your search criteria
-        </h2>
+        <h2 className="response">No Countries match your search criteria</h2>
       ) : (
         <AllCountriesContainer countriesToDisplay={countriesToDisplay} />
       )}

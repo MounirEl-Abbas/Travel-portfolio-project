@@ -4,6 +4,7 @@ import CountryCard from "../CountryCard";
 import { useSelector, useDispatch } from "react-redux";
 import CountryCities from "./partials/CountryCities";
 import { getCountryCode } from "../../utils/getCountryCode";
+import Logo from "../Logo";
 
 import {
   singleCountryActions,
@@ -80,15 +81,19 @@ if !countries.data.length (empty) continue
   return (
     <>
       {singleCountry.loading ? (
-        <h2>Loading...</h2>
+        <h2 className="response">Loading...</h2>
       ) : (
-        <main>
-          <header>HERO</header>
-          <CountryCard country={singleCountry.countryObj} />
-          <CountryTrends trends={singleCountry.countryInfo.trends} />
+        <main className="single-country-page">
+          <Logo />
+          <header>
+            <div className="img-opacity-container">
+              <CountryCard country={singleCountry.countryObj} />
+            </div>
+          </header>
           <CountryTicketMaster
             events={api.ticketMasterData}
             isLoading={api.loading}
+            countryName={singleCountry.countryObj.name.common}
           />
           <CountryCities
             cities={singleCountry.countryInfo.cities}

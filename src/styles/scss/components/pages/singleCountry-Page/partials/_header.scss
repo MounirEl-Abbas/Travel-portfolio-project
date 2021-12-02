@@ -3,7 +3,7 @@
     center;
   background-size: cover;
   width: 100%;
-  height: 25rem;
+  height: 30rem;
   .img-opacity-container {
     width: 100%;
     height: 100%;
@@ -12,7 +12,7 @@
     .country-card {
       opacity: 0.8;
       width: 90%;
-      max-width: 700px;
+      max-width: 50rem;
       border-radius: 10px;
       box-shadow: 5px 5px 5px 2px rgba($color: #000, $alpha: 0.5);
     }
@@ -24,3 +24,9 @@
     background-image: url("../../assets/images/singleCountry-header.jpg");
   }
 }
+
+// @media (min-width: 2000px) {
+//   .single-country-page header .img-opacity-container .country-card {
+//     max-width: 900px;
+//   }
+// }

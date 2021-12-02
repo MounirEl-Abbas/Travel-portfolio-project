@@ -1,32 +1,55 @@
 .ticketmaster-events {
-  width: 100%;
-}
-.ticketmaster-events {
-  width: 100%;
-  margin-bottom: 2rem;
-  border: 1px solid red;
+  width: 80%;
+  margin: 0 auto 2rem auto;
+  text-align: center;
+  max-width: 75rem;
+  background-color: $shade2;
+  border-width: 0 1rem 1rem 1rem;
+  border-style: groove;
+  border-color: $comp-color;
+  box-shadow: 2px 6px 10px 1px rgba($color: $abs-black, $alpha: 0.5);
+  h2 {
+    padding: 1rem 0;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 30%;
+      height: 3px;
+      background-color: $accent-color;
+    }
+  }
   .slider-container {
     margin: 0 auto;
-    border: 2px solid green;
-    width: 50%;
-    height: 300px;
+    width: 100%;
+    height: 31rem;
+
     text-align: center;
     position: relative;
     overflow: hidden;
     display: flex;
+    justify-content: space-between;
   }
 
   .prev,
   .next {
     position: absolute;
-    top: 225px;
-    transform: translateY(-50%);
-    width: 1.25rem;
-    height: 1.25rem;
+    top: 0;
+    height: 100%;
     display: grid;
     place-items: center;
     font-size: 2rem;
     cursor: pointer;
+    color: $accent-color;
+    background-color: $shade2;
+    transition: linear opacity 0.1s;
+    &:hover {
+      opacity: 0.5;
+    }
   }
   .prev {
     left: 0;
@@ -36,18 +59,46 @@
   }
 
   article {
-    border: 2px solid blue;
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 5%;
+    width: 90%;
     height: 100%;
     opacity: 0;
     transition: transform linear 0.2s, opacity linear 0.5s;
+
+    h5 {
+      padding: 0.8rem 0;
+      width: 85%;
+      margin: auto;
+      overflow-wrap: break-word;
+      hyphens: auto;
+    }
+    div {
+      width: 80%;
+      max-width: 600px;
+      margin: auto;
+      height: 70%;
+      img {
+        border-radius: 20px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    p {
+      opacity: 0.6;
+    }
   }
   article.activeSlide {
     opacity: 1;
     transform: translateX((0));
+    a {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
   }
   article.lastSlide {
     transform: translateX(-100%);

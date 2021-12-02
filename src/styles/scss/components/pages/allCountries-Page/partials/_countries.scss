@@ -118,3 +118,15 @@
     max-width: 700px;
   }
 }
+
+@media (min-width: 2000px) {
+  .countries-flex-container {
+    max-width: 1200px;
+  }
+  .country {
+    max-width: 450px;
+  }
+  .countries-alternative-layout .country {
+    max-width: 900px;
+  }
+}

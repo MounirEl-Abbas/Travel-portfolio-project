@@ -1081,6 +1081,18 @@ footer div {
   }
 }
 
+@media (min-width: 2000px) {
+  .countries-flex-container {
+    max-width: 1200px;
+  }
+  .country {
+    max-width: 450px;
+  }
+  .countries-alternative-layout .country {
+    max-width: 900px;
+  }
+}
+
 @media (min-width: 768px) {
   /****************************
   ALL COUNTRIES PAGE
@@ -1098,7 +1110,7 @@ footer div {
   background: url("../../assets/images/singleCountry-header-sm.jpg") no-repeat center;
   background-size: cover;
   width: 100%;
-  height: 25rem;
+  height: 30rem;
 }
 
 .single-country-page header .img-opacity-container {
@@ -1111,7 +1123,7 @@ footer div {
 .single-country-page header .img-opacity-container .country-card {
   opacity: 0.8;
   width: 90%;
-  max-width: 700px;
+  max-width: 50rem;
   border-radius: 10px;
   box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.5);
 }
@@ -1123,37 +1135,62 @@ footer div {
 }
 
 .ticketmaster-events {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto 2rem auto;
+  text-align: center;
+  max-width: 75rem;
+  background-color: #e5dcc3;
+  border-width: 0 1rem 1rem 1rem;
+  border-style: groove;
+  border-color: #a09f57;
+  box-shadow: 2px 6px 10px 1px rgba(0, 0, 0, 0.5);
 }
 
-.ticketmaster-events {
-  width: 100%;
-  margin-bottom: 2rem;
-  border: 1px solid red;
+.ticketmaster-events h2 {
+  padding: 1rem 0;
+  position: relative;
+}
+
+.ticketmaster-events h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 30%;
+  height: 3px;
+  background-color: #c56824;
 }
 
 .ticketmaster-events .slider-container {
   margin: 0 auto;
-  border: 2px solid green;
-  width: 50%;
-  height: 300px;
+  width: 100%;
+  height: 31rem;
   text-align: center;
   position: relative;
   overflow: hidden;
   display: flex;
+  justify-content: space-between;
 }
 
 .ticketmaster-events .prev,
 .ticketmaster-events .next {
   position: absolute;
-  top: 225px;
-  transform: translateY(-50%);
-  width: 1.25rem;
-  height: 1.25rem;
+  top: 0;
+  height: 100%;
   display: grid;
   place-items: center;
   font-size: 2rem;
   cursor: pointer;
+  color: #c56824;
+  background-color: #e5dcc3;
+  transition: linear opacity 0.1s;
+}
+
+.ticketmaster-events .prev:hover,
+.ticketmaster-events .next:hover {
+  opacity: 0.5;
 }
 
 .ticketmaster-events .prev {
@@ -1165,19 +1202,51 @@ footer div {
 }
 
 .ticketmaster-events article {
-  border: 2px solid blue;
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 5%;
+  width: 90%;
   height: 100%;
   opacity: 0;
   transition: transform linear 0.2s, opacity linear 0.5s;
 }
 
+.ticketmaster-events article h5 {
+  padding: 0.8rem 0;
+  width: 85%;
+  margin: auto;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.ticketmaster-events article div {
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  height: 70%;
+}
+
+.ticketmaster-events article div img {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ticketmaster-events article p {
+  opacity: 0.6;
+}
+
 .ticketmaster-events article.activeSlide {
   opacity: 1;
   transform: translateX(0);
+}
+
+.ticketmaster-events article.activeSlide a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .ticketmaster-events article.lastSlide {

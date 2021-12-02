@@ -59,8 +59,13 @@ const CountryTicketMaster = ({ events, isLoading, countryName }) => {
               <article className={position}>
                 <a href={url} key={id} target="_blank" rel="noreferrer">
                   <h5>{name}</h5>
+                  <div>
+                    <img src={images[0].url} alt="" />
+                  </div>
                   <p>{localDate}</p>
-                  <img src={images[0].url} alt="" />
+                  <p>
+                    ({index + 1} / {events.length})
+                  </p>
                 </a>
               </article>
             );

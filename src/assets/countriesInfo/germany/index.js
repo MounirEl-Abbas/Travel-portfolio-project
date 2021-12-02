@@ -1,5 +1,3 @@
-import germanyFrameworkTrend from "./trends/frameworks-trend.png";
-import germanyLanguageTrend from "./trends/languages-trend.png";
 import berlin1 from "./berlin/berlin1.jpg";
 import berlin2 from "./berlin/berlin2.jpg";
 import berlin3 from "./berlin/berlin3.jpg";
@@ -11,8 +9,6 @@ import hamburg2 from "./hamburg/hamburg2.jpg";
 import hamburg3 from "./hamburg/hamburg3.jpg";
 
 export {
-  germanyFrameworkTrend,
-  germanyLanguageTrend,
   berlin1,
   berlin2,
   berlin3,

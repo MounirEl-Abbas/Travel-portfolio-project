@@ -1,5 +1,3 @@
-import italyFrameworkTrend from "./trends/frameworks-trend.png";
-import italyLanguageTrend from "./trends/languages-trend.png";
 import rome1 from "./rome/rome1.jpg";
 import rome2 from "./rome/rome2.jpg";
 import rome3 from "./rome/rome3.jpg";
@@ -11,8 +9,6 @@ import milan2 from "./milan/milan2.jpg";
 import milan3 from "./milan/milan3.jpg";
 
 export {
-  italyFrameworkTrend,
-  italyLanguageTrend,
   rome1,
   rome2,
   rome3,

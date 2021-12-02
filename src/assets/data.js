@@ -1,7 +1,5 @@
 /* Canada */
 import {
-  canadaFrameworkTrend,
-  canadaLanguageTrend,
   ottawa1,
   ottawa2,
   ottawa3,
@@ -15,8 +13,6 @@ import {
 
 /* unitedStates */
 import {
-  unitedStatesFrameworkTrend,
-  unitedStatesLanguageTrend,
   washington1,
   washington2,
   washington3,
@@ -29,8 +25,6 @@ import {
 } from "./countriesInfo/unitedStates";
 /* France */
 import {
-  franceFrameworkTrend,
-  franceLanguageTrend,
   paris1,
   paris2,
   paris3,
@@ -45,8 +39,6 @@ import {
 /* Austria */
 
 import {
-  austriaFrameworkTrend,
-  austriaLanguageTrend,
   vienna1,
   vienna2,
   vienna3,
@@ -61,8 +53,6 @@ import {
 /* Germany */
 
 import {
-  germanyFrameworkTrend,
-  germanyLanguageTrend,
   berlin1,
   berlin2,
   berlin3,
@@ -77,8 +67,6 @@ import {
 /* Italy */
 
 import {
-  italyFrameworkTrend,
-  italyLanguageTrend,
   rome1,
   rome2,
   rome3,
@@ -93,8 +81,6 @@ import {
 /* Switzerland */
 
 import {
-  switzerlandFrameworkTrend,
-  switzerlandLanguageTrend,
   zurich1,
   zurich2,
   zurich3,
@@ -109,10 +95,6 @@ import {
 const data = [
   {
     country: "France",
-    trends: {
-      frameworkTrend: franceFrameworkTrend,
-      languageTrend: franceLanguageTrend,
-    },
     cities: [
       {
         id: 1,
@@ -143,10 +125,6 @@ const data = [
   },
   {
     country: "Austria",
-    trends: {
-      frameworkTrend: austriaFrameworkTrend,
-      languageTrend: austriaLanguageTrend,
-    },
     cities: [
       {
         id: 4,
@@ -177,10 +155,6 @@ const data = [
 
   {
     country: "Germany",
-    trends: {
-      frameworkTrend: germanyFrameworkTrend,
-      languageTrend: germanyLanguageTrend,
-    },
     cities: [
       {
         id: 7,
@@ -211,10 +185,6 @@ const data = [
 
   {
     country: "Italy",
-    trends: {
-      frameworkTrend: italyFrameworkTrend,
-      languageTrend: italyLanguageTrend,
-    },
     cities: [
       {
         id: 10,
@@ -245,10 +215,6 @@ const data = [
 
   {
     country: "Switzerland",
-    trends: {
-      frameworkTrend: switzerlandFrameworkTrend,
-      languageTrend: switzerlandLanguageTrend,
-    },
     cities: [
       {
         id: 13,
@@ -278,10 +244,6 @@ const data = [
   },
   {
     country: "Canada",
-    trends: {
-      frameworkTrend: canadaFrameworkTrend,
-      languageTrend: canadaLanguageTrend,
-    },
     cities: [
       {
         id: 16,
@@ -312,10 +274,6 @@ const data = [
   },
   {
     country: "United States",
-    trends: {
-      frameworkTrend: unitedStatesFrameworkTrend,
-      languageTrend: unitedStatesLanguageTrend,
-    },
     cities: [
       {
         id: 19,

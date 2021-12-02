@@ -1,5 +1,3 @@
-import austriaFrameworkTrend from "./trends/frameworks-trend.png";
-import austriaLanguageTrend from "./trends/languages-trend.png";
 import vienna1 from "./vienna/vienna1.jpg";
 import vienna2 from "./vienna/vienna2.jpg";
 import vienna3 from "./vienna/vienna3.jpg";
@@ -11,8 +9,6 @@ import innsbruck2 from "./innsbruck/innsbruck2.jpg";
 import innsbruck3 from "./innsbruck/innsbruck3.jpg";
 
 export {
-  austriaFrameworkTrend,
-  austriaLanguageTrend,
   vienna1,
   vienna2,
   vienna3,

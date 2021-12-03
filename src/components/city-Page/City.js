@@ -6,6 +6,7 @@ import CityInfo from "./partials/CityInfo";
 import CitySlider from "./partials/CitySlider";
 import CityWeather from "./partials/CityWeather";
 import { getCountryCode } from "../../utils/getCountryCode";
+import Logo from "../Logo";
 
 const City = () => {
   const location = useLocation();
@@ -47,29 +48,33 @@ const City = () => {
   return (
     <>
       {api.loading && singleCountry.loading ? (
-        <h2>Loading......</h2>
+        <h2 className="response">Loading......</h2>
       ) : (
         <main className="city-page">
-          <header>HERO</header>
-          <section className="city-info">
-            <CityInfo info={singleCountry.currentCityObj} />
+          <Logo />
+          <header>
+            <h2>{singleCountry.currentCityObj.cityName}</h2>
+          </header>
+          <section className="city-page-city-info">
             <CitySlider images={singleCountry.currentCityObj.images} />
+            <CityInfo info={singleCountry.currentCityObj} />
           </section>
-          <section>
-            <img src={api.mapsData} alt="" />
+          <section className="city-page-location-info">
+            <figure>
+              <img src={api.mapsData} alt="" />
+            </figure>
+
+            {!Object.keys(api.currentWeather).length &&
+            !api.forecastWeather.length ? (
+              <h2 className="response">Loading Weather...</h2>
+            ) : (
+              <CityWeather
+                api={api}
+                apiActions={apiActions}
+                dispatch={dispatch}
+              />
+            )}
           </section>
-          {!Object.keys(api.currentWeather).length &&
-          !api.forecastWeather.length ? (
-            <h2>Loading...</h2>
-          ) : (
-            <CityWeather
-              api={api}
-              apiActions={apiActions}
-              dispatch={dispatch}
-            />
-          )}
-          <section>TICKETMASTER API</section>
-          <section>HOTEL API</section>
         </main>
       )}
     </>

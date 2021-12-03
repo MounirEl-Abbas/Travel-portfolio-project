@@ -2,9 +2,11 @@ import React from "react";
 
 const CityInfo = ({ info }) => {
   return (
-    <article>
-      <h1>{info.cityName}</h1>
-      <p>Population: {info.population}</p>
+    <article className="city-info">
+      <h4>{info.cityName}</h4>
+      <p>
+        <span>Population:</span> {info.population.toLocaleString()}
+      </p>
       <p>{info.description}</p>
     </article>
   );

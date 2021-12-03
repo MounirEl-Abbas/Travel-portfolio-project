@@ -18,7 +18,7 @@ const CountryTicketMaster = ({ events, isLoading, countryName }) => {
   useEffect(() => {
     let slider = setInterval(() => {
       setIndex(index + 1);
-    }, 5000);
+    }, 4000);
     return () => clearInterval(slider);
   }, [index]);
 
@@ -45,22 +45,41 @@ const CountryTicketMaster = ({ events, isLoading, countryName }) => {
               },
               images,
             } = event;
-            let position = "nextSlide";
+            //When more than 3 slides, other slides
+            let position = "otherSlide";
+            //Slide after the current === "nextSlide"
+            if (
+              eventIndex === index + 1 ||
+              (index === events.length - 1 && eventIndex === 0)
+            ) {
+              position = "nextSlide";
+            }
+            /* Current Slide */
             if (eventIndex === index) {
               position = "activeSlide";
             }
+            //Slide preceding current slide
             if (
               eventIndex === index - 1 ||
-              (index === 0 && eventIndex === event.length - 1)
+              (index === 0 && eventIndex === events.length - 1)
             ) {
               position = "lastSlide";
+            }
+            //If only 1 event, make it active
+            if (events.length === 1) {
+              position = "activeSlide";
             }
             return (
               <article className={position}>
                 <a href={url} key={id} target="_blank" rel="noreferrer">
                   <h5>{name}</h5>
+                  <div>
+                    <img src={images[1].url} alt="" />
+                  </div>
                   <p>{localDate}</p>
-                  <img src={images[0].url} alt="" />
+                  <p>
+                    ({eventIndex + 1} / {events.length})
+                  </p>
                 </a>
               </article>
             );

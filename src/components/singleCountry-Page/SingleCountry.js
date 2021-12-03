@@ -97,6 +97,7 @@ if !countries.data.length (empty) continue
           <CountryCities
             cities={singleCountry.countryInfo.cities}
             setCurrentCity={singleCountryActions.setCurrentCity}
+            countryName={singleCountry.countryObj.name.common}
           />
         </main>
       )}

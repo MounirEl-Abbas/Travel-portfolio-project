@@ -1,0 +1,106 @@
+.city-page-city-info {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 600px;
+  margin: 5rem auto;
+  background-color: $shade2;
+  border-radius: 20px;
+}
+.city-images-container {
+  height: 400px;
+  width: 100%;
+  // max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+  box-shadow: 2px 2px 20px rgba($color: #000000, $alpha: 0.2);
+  border-radius: 20px;
+  background-color: darken($bg-color, 5%);
+  #displayImg {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+  }
+  .img-indicators-container {
+    display: flex;
+    justify-content: space-between;
+    height: 30%;
+    padding-top: 1rem;
+    img {
+      height: 100%;
+      width: 33.33%;
+      object-fit: cover;
+      transition: all 0.3s linear;
+      cursor: pointer;
+    }
+    img:first-of-type {
+      border-radius: 0 0 0 20px;
+      border-right: 3px solid $comp-color;
+    }
+    img:last-of-type {
+      border-radius: 0 0 20px 0;
+      border-left: 3px solid $comp-color;
+    }
+  }
+
+  .indicator {
+    opacity: 0.3;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  .current-image {
+    opacity: 1;
+  }
+}
+
+.city-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 200px;
+  h4 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+  span {
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 992px) {
+  .city-page-city-info {
+    max-width: 80rem;
+    flex-direction: row;
+    align-items: center;
+  }
+  .city-images-container {
+    border-radius: 20px 0 0 20px;
+    width: 70%;
+    height: 40rem;
+    #displayImg {
+      border-radius: 20px 0 0 0;
+    }
+    .img-indicators-container {
+      img {
+        width: 30%;
+      }
+      img:first-of-type {
+        border-width: 0;
+      }
+      img:last-of-type {
+        border-width: 0;
+        border-radius: 0 0 0 0;
+      }
+    }
+  }
+  .city-info {
+    width: 30%;
+    height: 40rem;
+    line-height: 1.5;
+  }
+}

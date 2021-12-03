@@ -2,23 +2,28 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-const CountryCities = ({ cities, setCurrentCity }) => {
+const CountryCities = ({ cities, setCurrentCity, countryName }) => {
   const dispatch = useDispatch();
   return (
     <section className="country-cities">
-      {cities.map((city) => {
-        return (
-          <Link
-            to={`${city.cityName}`}
-            onClick={() => dispatch(setCurrentCity(city))}
-          >
-            <article>
-              <h4>{city.cityName}</h4>
-              <img src={city.images[0]} alt="" />
+      <section className="cities-title">
+        <h2>Choose a city to visit in {countryName}</h2>
+      </section>
+      <section className="cities-container">
+        {cities.map((city) => {
+          return (
+            <article className="city">
+              <Link
+                to={`${city.cityName}`}
+                onClick={() => dispatch(setCurrentCity(city))}
+              >
+                <h3>{city.cityName}</h3>
+                <img src={city.images[0]} alt="" />
+              </Link>
             </article>
-          </Link>
-        );
-      })}
+          );
+        })}
+      </section>
     </section>
   );
 };

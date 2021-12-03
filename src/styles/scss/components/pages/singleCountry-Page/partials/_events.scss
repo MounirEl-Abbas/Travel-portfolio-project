@@ -112,12 +112,12 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   article.activeSlide {
     z-index: 9;
   }
   article.lastSlide,
   article.nextSlide {
-    opacity: 0.2;
+    opacity: 0.15;
   }
 }

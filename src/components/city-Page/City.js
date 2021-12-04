@@ -63,7 +63,7 @@ const City = () => {
           </figure>
 
           {!Object.keys(api.currentWeather).length ||
-          !api.forecastWeather.length ? (
+          !Object.keys(api.forecastWeather.length) ? (
             <h2 className="response">Loading Weather...</h2>
           ) : (
             <CityWeather />

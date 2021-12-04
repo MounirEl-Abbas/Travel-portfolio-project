@@ -13,7 +13,7 @@ const Navbar = () => {
         <Link to="/">Home</Link>
         <Link to="/countries">Explore</Link>
         <HashLink to="/#pricing-section">Pricing</HashLink>
-        <Link to="/about">About</Link>
+        <a href="/">About</a>
       </section>
       <section className="navbar-log-btns">
         <button>Try for free!</button>

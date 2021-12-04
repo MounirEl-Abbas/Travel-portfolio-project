@@ -39,9 +39,7 @@ const CityWeather = () => {
     );
   } else {
     const { condition, localtime, temp_c, temp_f } = api.currentWeather;
-    return !Object.keys(api.currentWeather).length ? (
-      <h2 className="response">Loading Weather...</h2>
-    ) : (
+    return (
       <section className="weather-container default-view">
         <article>
           <h5>{condition.text}</h5>

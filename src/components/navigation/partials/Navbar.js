@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import { LogoIpsum } from "../../assets/";
+import { LogoIpsum } from "../../../assets/";
 
 const Navbar = () => {
   return (

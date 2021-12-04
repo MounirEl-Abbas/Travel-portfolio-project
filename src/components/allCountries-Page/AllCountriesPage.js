@@ -34,7 +34,9 @@ const AllCountriesPage = () => {
   if (countries.searchTerm) {
     countriesToDisplay = countries.data.filter(
       (country) =>
-        country.name.common.toLowerCase().indexOf(countries.searchTerm) !== -1
+        country.name.common
+          .toLowerCase()
+          .indexOf(countries.searchTerm.toLowerCase()) !== -1
     );
   } else {
     //Seach bar empty, use all countries data

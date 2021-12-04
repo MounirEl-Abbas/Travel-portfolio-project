@@ -136,7 +136,7 @@ export const fetchCurrentWeather = (cityName, weatherAPIKey) => {
     dispatch(fetchAPIRequest());
     try {
       const response = await axios.get(
-        `http://api.weatherapi.com/v1/current.json?q=${cityName}&key=${weatherAPIKey}`
+        `https://api.weatherapi.com/v1/current.json?q=${cityName}&key=${weatherAPIKey}`
       );
       const {
         current: { condition, temp_c, temp_f },
@@ -155,7 +155,7 @@ export const fetchForecastWeather = (cityName, weatherAPIKey) => {
     dispatch(fetchAPIRequest());
     try {
       const response = await axios.get(
-        `    http://api.weatherapi.com/v1/forecast.json?q=${cityName}&days=3&key=${weatherAPIKey}
+        `    https://api.weatherapi.com/v1/forecast.json?q=${cityName}&days=3&key=${weatherAPIKey}
 `
       );
       const {

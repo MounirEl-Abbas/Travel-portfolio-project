@@ -16,86 +16,72 @@ import CountryTicketMaster from "./partials/CountryTicketMaster";
 const SingleCountry = () => {
   const location = useLocation(); // pathname:'/countries/COUNTY'
   const singleCountry = useSelector((state) => state.singleCountry);
-  const countries = useSelector((state) => state.countries);
+  // const countries = useSelector((state) => state.countries);
   const api = useSelector((state) => state.api);
   const dispatch = useDispatch();
 
-  /* If the user navigates to countries/:countryName in the URL  */
-
+  /* Get all Countries */
   useEffect(() => {
-    if (countries.data.length) return;
+    console.log("getting countries");
     dispatch(apiActions.fetchCountriesAPI());
   }, []);
 
   useEffect(() => {
     if (!api.countriesData.length) return;
-
-    dispatch(countriesActions.getCountries(api.countriesData));
-  }, [api.countriesData]);
-
-  /*******************************************/
-  /* 
-if countries.data.length is full, return
-if !countries.data.length (empty) continue
-*/
-
-  useEffect(() => {
-    if (!countries.data.length) return;
-    // if (Object.keys(singleCountry.countryInfo).length)
-    //   return;
-    let countrySelected = location.pathname.split("/")[2]; // COUNTRY NAME: String
-
-    /* If the country name has a space E.G. United States */
+    /* Once we have all countries */
+    //Get name of country selected from url
+    let countrySelected = location.pathname.split("/")[2];
     if (countrySelected.indexOf("%") !== -1) {
       countrySelected = countrySelected.split("%20").join(" ");
     }
-
-    const countrySelectedObj = countries.data.find(
+    //Find the country we are on's object from all countries data
+    const selectedCountry = api.countriesData.find(
       (country) => country.name.common === countrySelected
     );
-
-    //On single country page, always alternative view of country card
-    dispatch(countriesActions.handleToggleLayout("alternative"));
-    //Pass obj to state
-    dispatch(singleCountryActions.addCountryChosenToState(countrySelectedObj));
-    //Pass countryName:string, then iterate assets/data.js based on country name, to find additional country info (cities, trends)
+    //Add country to state
+    dispatch(singleCountryActions.addCountryChosenToState(selectedCountry));
+    //Get additional info on the country
     dispatch(singleCountryActions.getCountryInfo(countrySelected));
-
-    //Now Loading is false
-  }, [countries.data]);
-
-  useEffect(() => {
-    if (!Object.keys(singleCountry.countryObj).length) return;
-    const countryName = singleCountry.countryObj.name.common;
-    const countryCode = getCountryCode(countryName);
+    //Toggle countryCard layout to alternative
+    dispatch(countriesActions.handleToggleLayout("alternative"));
+    //Get county's ticketMaster events
+    const countryCode = getCountryCode(countrySelected);
     const ticketMasterAPIKey = process.env.REACT_APP_TICKET_MASTER_API_KEY;
     dispatch(apiActions.fetchTicketMasterAPI(countryCode, ticketMasterAPIKey));
-  }, [singleCountry.countryObj]);
+  }, [api.countriesData.length]);
 
   return (
     <>
-      {singleCountry.loading ? (
-        <h2 className="response">Loading...</h2>
-      ) : (
-        <main className="single-country-page">
-          <Logo />
-          <header>
-            <div className="img-opacity-container">
+      <main className="single-country-page">
+        <Logo />
+        <header>
+          <div className="img-opacity-container">
+            {Object.keys(singleCountry.countryObj).length ? (
               <CountryCard country={singleCountry.countryObj} />
-            </div>
-          </header>
+            ) : (
+              <h2 className="response">Loading Country...</h2>
+            )}
+          </div>
+        </header>
+        {Object.keys(singleCountry.countryObj).length ? (
           <CountryTicketMaster
             events={api.ticketMasterData}
             isLoading={api.loading}
             countryName={singleCountry.countryObj.name.common}
           />
+        ) : (
+          <h2 className="response">Getting Ticket Master Events...</h2>
+        )}
+        {Object.keys(singleCountry.countryObj).length ? (
           <CountryCities
             cities={singleCountry.countryInfo.cities}
             setCurrentCity={singleCountryActions.setCurrentCity}
             countryName={singleCountry.countryObj.name.common}
           />
-        </main>
-      )}
+        ) : (
+          <h2 className="response">Loading Country Cities...</h2>
+        )}
+      </main>
     </>
   );
 };

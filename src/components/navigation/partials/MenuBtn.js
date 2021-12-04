@@ -1,5 +1,5 @@
 import React from "react";
-import { FiMenu, ImCross } from "../../assets";
+import { FiMenu, ImCross } from "../../../assets";
 
 const MenuBtn = ({ isMenuOpen, setIsMenuOpen }) => {
   return (

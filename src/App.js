@@ -5,7 +5,6 @@ import Home from "./components/home-Page/Home";
 import AllCountries from "./components/allCountries-Page/AllCountriesPage";
 import SingleCountry from "./components/singleCountry-Page/SingleCountry";
 import City from "./components/city-Page/City";
-import About from "./components/about-Page/About";
 import NotFound from "./components/error-Page/NotFound";
 
 //components
@@ -20,7 +19,6 @@ const App = () => {
         <div className="pages">
           <Routes>
             <Route path="/" index element={<Home />} />
-            <Route path="/about" element={<About />} />
             <Route path="/countries" element={<AllCountries />} />
             <Route path="/countries/:countryName" element={<SingleCountry />} />
             <Route path="/countries/:countryName/:city" element={<City />} />

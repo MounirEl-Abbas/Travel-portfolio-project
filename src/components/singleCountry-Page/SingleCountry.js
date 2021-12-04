@@ -24,13 +24,11 @@ const SingleCountry = () => {
 
   useEffect(() => {
     if (countries.data.length) return;
-    console.log("useeffect 1");
     dispatch(apiActions.fetchCountriesAPI());
   }, []);
 
   useEffect(() => {
     if (!api.countriesData.length) return;
-    console.log("useeffect 2");
 
     dispatch(countriesActions.getCountries(api.countriesData));
   }, [api.countriesData]);
@@ -43,7 +41,6 @@ if !countries.data.length (empty) continue
 
   useEffect(() => {
     if (!countries.data.length) return;
-    console.log("useeffect 3");
     // if (Object.keys(singleCountry.countryInfo).length)
     //   return;
     let countrySelected = location.pathname.split("/")[2]; // COUNTRY NAME: String
@@ -56,7 +53,6 @@ if !countries.data.length (empty) continue
     const countrySelectedObj = countries.data.find(
       (country) => country.name.common === countrySelected
     );
-    console.log(`countrySelectedObj`, countrySelectedObj);
 
     //On single country page, always alternative view of country card
     dispatch(countriesActions.handleToggleLayout("alternative"));
@@ -73,7 +69,6 @@ if !countries.data.length (empty) continue
     const countryName = singleCountry.countryObj.name.common;
     const countryCode = getCountryCode(countryName);
     const ticketMasterAPIKey = process.env.REACT_APP_TICKET_MASTER_API_KEY;
-    console.log(`get events@@@@@@@@@@@@`);
     dispatch(apiActions.fetchTicketMasterAPI(countryCode, ticketMasterAPIKey));
   }, [singleCountry.countryObj]);
 

@@ -1,6 +1,7 @@
 import React from "react";
 
 const CityWeather = ({ api, apiActions, dispatch }) => {
+  console.log(`api`, api);
   if (api.isForecast) {
     return (
       <section className="weather-container forecast-view">

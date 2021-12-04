@@ -25,7 +25,6 @@ const reducer = (state = initialState, action) => {
       const countryAdditionalInfo = data.find(
         (countries) => countries.country === action.payload
       );
-      console.log(`countryAdditionalInfo`, countryAdditionalInfo);
       return {
         ...state,
         countryInfo: countryAdditionalInfo,

@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 
 const CountryCard = ({ country }) => {
   const countries = useSelector((state) => state.countries);
-  console.log(`country`, country);
   return (
     <article
       className={`${

@@ -1,6 +1,10 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { apiActions } from "../../../redux";
 
-const CityWeather = ({ api, apiActions, dispatch }) => {
+const CityWeather = () => {
+  const api = useSelector((state) => state.api);
+  const dispatch = useDispatch();
   if (api.isForecast) {
     return (
       <section className="weather-container forecast-view">
@@ -35,7 +39,9 @@ const CityWeather = ({ api, apiActions, dispatch }) => {
     );
   } else {
     const { condition, localtime, temp_c, temp_f } = api.currentWeather;
-    return (
+    return !Object.keys(api.currentWeather).length ? (
+      <h2 className="response">Loading Weather...</h2>
+    ) : (
       <section className="weather-container default-view">
         <article>
           <h5>{condition.text}</h5>

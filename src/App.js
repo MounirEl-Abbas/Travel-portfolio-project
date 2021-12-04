@@ -1,4 +1,4 @@
-import { BrowserRouter as Switch, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //components
 import Home from "./components/home-Page/Home";
@@ -11,22 +11,29 @@ import NotFound from "./components/error-Page/NotFound";
 import Navigation from "./components/navigation/Navigation";
 import Footer from "./components/Footer";
 
+import ScrollToTop from "./utils/ScrollToTop";
+
 const App = () => {
   return (
     <div className="App">
-      <Switch>
+      <BrowserRouter>
         <Navigation />
         <div className="pages">
-          <Routes>
-            <Route path="/" index element={<Home />} />
-            <Route path="/countries" element={<AllCountries />} />
-            <Route path="/countries/:countryName" element={<SingleCountry />} />
-            <Route path="/countries/:countryName/:city" element={<City />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <ScrollToTop>
+            <Routes>
+              <Route path="/" index element={<Home />} />
+              <Route path="/countries" element={<AllCountries />} />
+              <Route
+                path="/countries/:countryName"
+                element={<SingleCountry />}
+              />
+              <Route path="/countries/:countryName/:city" element={<City />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </ScrollToTop>
         </div>
         <Footer />
-      </Switch>
+      </BrowserRouter>
     </div>
   );
 };

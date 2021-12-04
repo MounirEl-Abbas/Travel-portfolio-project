@@ -12,7 +12,7 @@ const Footer = () => {
         </section>
         <section className="footer-navigation-container">
           <article aria-label="About">
-            <Link to="/about">About Us</Link>
+            <button>About Us</button>
             <button>Blog</button>
             <button>Team</button>
             <button>Career</button>

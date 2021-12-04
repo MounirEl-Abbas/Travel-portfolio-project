@@ -7,6 +7,7 @@ import {
   westJet,
   expedia,
 } from "../../../assets";
+import { Link } from "react-router-dom";
 
 const HomeHero = () => {
   return (
@@ -21,7 +22,9 @@ const HomeHero = () => {
           </p>
           <article className="hero-content-call-to-action">
             <div className="hero-content-btns">
-              <button>Explore</button>
+              <Link to="/countries">
+                <button>Explore</button>
+              </Link>
             </div>
           </article>
         </article>

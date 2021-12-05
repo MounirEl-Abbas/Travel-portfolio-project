@@ -98,6 +98,7 @@ a :visited {
 .response {
   text-align: center;
   padding: 5rem;
+  margin: auto;
 }
 
 .navigation {
@@ -452,6 +453,7 @@ footer div {
 }
 
 .hero-content-title {
+  animation: fade-in-left 1.2s ease backwards;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -462,6 +464,8 @@ footer div {
 }
 
 .hero-content-title::after {
+  animation: slide-tr 1s linear both;
+  animation-delay: 0.5s;
   content: url("../../assets/images/plane-bg.png");
   position: absolute;
   bottom: 70%;
@@ -504,10 +508,13 @@ footer div {
 }
 
 .hero-content-images img:first-of-type {
+  animation: fade-in-right 0.6s ease both;
   display: none;
 }
 
 .hero-content-images img:last-of-type {
+  animation: fade-in-right 0.6s linear both;
+  animation-delay: 0.5s;
   position: absolute;
   width: 90%;
   left: 0;
@@ -534,6 +541,7 @@ footer div {
 }
 
 .hero-companies img {
+  animation: flip-in-hor-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   width: 20%;
   max-width: 200px;
   mix-blend-mode: luminosity;
@@ -711,6 +719,7 @@ footer div {
     max-width: 700px;
   }
   .hero-content-images::before {
+    animation: fade-in-low-opacity 1.2s ease both;
     content: "";
     position: absolute;
     left: 0px;
@@ -811,13 +820,19 @@ footer div {
 
 .all-countries-page-header {
   background: url("../../assets/images/allCountries-header-sm.jpg") no-repeat center;
+  animation: kenburns-bottom 5s ease-out both;
   background-size: cover;
   height: 30rem;
-  display: grid;
-  place-items: center;
+  position: relative;
 }
 
 .all-countries-page-header div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   background-color: rgba(255, 255, 255, 0.5);
   outline: 1px solid #000;
   outline-offset: -0.5rem;
@@ -837,6 +852,12 @@ footer div {
   margin: auto;
   padding: 5px;
   max-width: 200px;
+}
+
+@media (min-width: 2000px) {
+  .all-countries-page-header div {
+    max-width: 1200px;
+  }
 }
 
 .all-countries-page-filters {
@@ -1477,6 +1498,7 @@ footer div {
 }
 
 .weather-container {
+  animation: scale-in-center 0.5s linear both;
   border-image-slice: 12 12 12 12;
   border-image-width: 12px 12px 12px 12px;
   border-image-outset: 0px 0px 0px 0px;
@@ -1512,6 +1534,7 @@ footer div {
 }
 
 .default-view article {
+  animation: scale-in-ver-center 0.8s linear both;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1533,6 +1556,10 @@ footer div {
   font-size: 0.8rem;
 }
 
+.forecast-view {
+  animation: scale-in-ver-center 0.8s linear both;
+}
+
 .forecast-view div {
   display: flex;
   flex-direction: column;
@@ -1541,6 +1568,7 @@ footer div {
 }
 
 .forecast-view div article {
+  animation: scale-in-ver-center 0.8s linear both;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1600,6 +1628,153 @@ footer div {
 @media (min-width: 768px) {
   #mobile-logo {
     display: none;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation fade-in
+ * ----------------------------------------
+ */
+
+@keyframes fade-in-low-opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation fade-in-left
+ * ----------------------------------------
+ */
+
+@keyframes fade-in-left {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation fade-in-right
+ * ----------------------------------------
+ */
+
+@keyframes fade-in-right {
+  0% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-tr
+ * ----------------------------------------
+ */
+
+@keyframes slide-tr {
+  0% {
+    transform: translateY(100vw) translateX(-100vw);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation flip-in-hor-bottom
+ * ----------------------------------------
+ */
+
+@keyframes flip-in-hor-bottom {
+  0% {
+    transform: rotateX(80deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation kenburns-bottom
+ * ----------------------------------------
+ */
+
+@keyframes kenburns-bottom {
+  0% {
+    transform: scale(1) translateY(0);
+    transform-origin: 50% 84%;
+  }
+  100% {
+    transform: scale(1.25) translateY(15px);
+    transform-origin: bottom;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation scale-in-ver-center
+ * ----------------------------------------
+ */
+
+@keyframes scale-in-ver-center {
+  0% {
+    transform: scaleY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes tracking-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    transform: translateZ(-700px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation scale-in-center
+ * ----------------------------------------
+ */
+
+@keyframes scale-in-center {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 

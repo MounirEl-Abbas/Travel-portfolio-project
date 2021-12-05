@@ -248,7 +248,7 @@ a :visited {
 .menu-btn {
   position: fixed;
   top: 3rem;
-  right: 20vw;
+  right: 3rem;
   font-size: 25px;
   cursor: pointer;
   z-index: 5;

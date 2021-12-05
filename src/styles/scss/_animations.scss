@@ -87,8 +87,8 @@
  */
 @-webkit-keyframes slide-tr {
   0% {
-    -webkit-transform: translateY(-100vw) translateX(100vw);
-    transform: translateY(-100vw) translateX(100vw);
+    -webkit-transform: translateY(-200vw) translateX(200vw);
+    transform: translateY(-200vw) translateX(200vw);
   }
   100% {
     -webkit-transform: translateY(0) translateX(0);
@@ -98,8 +98,8 @@
 
 @keyframes slide-tr {
   0% {
-    -webkit-transform: translateY(100vw) translateX(-100vw);
-    transform: translateY(100vw) translateX(-100vw);
+    -webkit-transform: translateY(200vw) translateX(-200vw);
+    transform: translateY(200vw) translateX(-200vw);
   }
   100% {
     -webkit-transform: translateY(0) translateX(0);

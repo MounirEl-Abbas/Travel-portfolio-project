@@ -17,6 +17,7 @@ const Sidemenu = ({ isMenuOpen, setIsMenuOpen }) => {
           ? "sidemenu-container sidemenu-container-open"
           : "sidemenu-container"
       }`}
+      onClick={() => setIsMenuOpen(false)}
     >
       <nav className={`${isMenuOpen ? "sidemenu sidemenu-open" : "sidemenu"}`}>
         <section className="sidemenu-logo-container">

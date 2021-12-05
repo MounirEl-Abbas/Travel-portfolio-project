@@ -165,7 +165,7 @@ a :visited {
 .sidemenu-container {
   height: 100%;
   width: 100%;
-  transform: translateX(-100vw);
+  transform: translateX(-100%);
   position: fixed;
   z-index: 4;
 }
@@ -245,8 +245,8 @@ a :visited {
 
 .menu-btn {
   position: fixed;
-  top: 30px;
-  right: 30px;
+  top: 3rem;
+  right: 3rem;
   font-size: 25px;
   cursor: pointer;
   z-index: 5;
@@ -464,11 +464,14 @@ footer div {
 }
 
 .hero-content-title::after {
-  animation: slide-tr 1s linear both;
-  animation-delay: 0.5s;
-  content: url("../../assets/images/plane-bg.png");
+  animation: slide-tr 2s linear both;
+  content: "";
   position: absolute;
-  bottom: 70%;
+  bottom: 75%;
+  width: 25rem;
+  background: url("../../assets/images/plane-bg.png") no-repeat right;
+  background-size: cover;
+  height: 20rem;
   left: 0;
   right: 0;
   mix-blend-mode: soft-light;
@@ -1688,7 +1691,7 @@ footer div {
 
 @keyframes slide-tr {
   0% {
-    transform: translateY(100vw) translateX(-100vw);
+    transform: translateY(200vw) translateX(-200vw);
   }
   100% {
     transform: translateY(0) translateX(0);

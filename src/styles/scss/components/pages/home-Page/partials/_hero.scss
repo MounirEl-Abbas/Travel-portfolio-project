@@ -21,11 +21,15 @@
   position: relative;
   &::after {
     -webkit-animation: slide-tr 1s linear both;
-    animation: slide-tr 1s linear both;
-    animation-delay: 0.5s;
-    content: url("../../assets/images/plane-bg.png");
+    animation: slide-tr 2s linear both;
+    content: "";
     position: absolute;
-    bottom: 70%;
+    bottom: 75%;
+    width: 25rem;
+    // max-width: 40rem;
+    background: url("../../assets/images/plane-bg.png") no-repeat right;
+    background-size: cover;
+    height: 20rem;
     left: 0;
     right: 0;
     mix-blend-mode: soft-light;

@@ -13,7 +13,7 @@ const FilterButtons = () => {
   );
   return (
     <section className="all-countries-page-filters">
-      <article className="filter-search">
+      <article className="filter-search" data-aos="fade-right">
         <BiSearch />
         <label htmlFor="search-bar">Search Countries</label>
 
@@ -26,7 +26,7 @@ const FilterButtons = () => {
         />
       </article>
 
-      <article className="filter-btns">
+      <article className="filter-btns" data-aos="fade-left">
         <div className="filter-btns-sort">
           <label htmlFor="sort-by">Sort By</label>
           <select

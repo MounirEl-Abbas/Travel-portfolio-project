@@ -54,7 +54,7 @@ const SingleCountry = () => {
     <>
       <main className="single-country-page">
         <Logo />
-        <header>
+        <header data-aos="fade" data-aos-duration="2000">
           <div className="img-opacity-container">
             {Object.keys(singleCountry.countryObj).length ? (
               <CountryCard country={singleCountry.countryObj} />

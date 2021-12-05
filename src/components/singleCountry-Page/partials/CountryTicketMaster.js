@@ -31,7 +31,7 @@ const CountryTicketMaster = ({ events, isLoading, countryName }) => {
     );
 
   return (
-    <section className="ticketmaster-events">
+    <section className="ticketmaster-events" data-aos="flip-up">
       <h2>Ticket Master Events in {countryName}</h2>
       <div className="slider-container">
         {events.length &&

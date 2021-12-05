@@ -19,6 +19,8 @@
 }
 
 .weather-container {
+  -webkit-animation: scale-in-center 0.5s linear both;
+  animation: scale-in-center 0.5s linear both;
   border-image-slice: 12 12 12 12;
   border-image-width: 12px 12px 12px 12px;
   border-image-outset: 0px 0px 0px 0px;
@@ -50,6 +52,8 @@
   justify-content: space-around;
   position: relative;
   article {
+    -webkit-animation: scale-in-ver-center 0.8s linear both;
+    animation: scale-in-ver-center 0.8s linear both;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -70,22 +74,29 @@
   }
 }
 
-.forecast-view div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 100%;
-  article {
-    position: relative;
+.forecast-view {
+  -webkit-animation: scale-in-ver-center 0.8s linear both;
+  animation: scale-in-ver-center 0.8s linear both;
+  div {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    height: 15rem;
-    padding: 0.5rem 0;
-    border-bottom: #97bde1 2px dashed;
-  }
-  article:last-of-type {
-    border: none;
+    justify-content: space-around;
+    width: 100%;
+
+    article {
+      -webkit-animation: scale-in-ver-center 0.8s linear both;
+      animation: scale-in-ver-center 0.8s linear both;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 15rem;
+      padding: 0.5rem 0;
+      border-bottom: #97bde1 2px dashed;
+    }
+    article:last-of-type {
+      border: none;
+    }
   }
 }
 #weather-date {

@@ -40,10 +40,10 @@ const City = () => {
     <>
       <main className="city-page">
         <Logo />
-        <header>
+        <header data-aos="fade-up" data-aos-anchor-placement="center-center">
           <h2>{singleCountry.currentCityObj.cityName}</h2>
         </header>
-        <section className="city-page-city-info">
+        <section className="city-page-city-info" data-aos="fade-up">
           {!Object.keys(singleCountry.currentCityObj).length ? (
             <h2 className="response">Loading City Info...</h2>
           ) : (
@@ -54,7 +54,7 @@ const City = () => {
           )}
         </section>
         <section className="city-page-location-info">
-          <figure>
+          <figure data-aos="fade-right">
             {api.mapsData ? (
               <img src={api.mapsData} alt="" />
             ) : (

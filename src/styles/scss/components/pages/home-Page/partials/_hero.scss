@@ -10,6 +10,8 @@
   flex-direction: column;
 }
 .hero-content-title {
+  -webkit-animation: fade-in-left 1.2s ease backwards;
+  animation: fade-in-left 1.2s ease backwards;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -18,6 +20,9 @@
   margin: auto;
   position: relative;
   &::after {
+    -webkit-animation: slide-tr 1s linear both;
+    animation: slide-tr 1s linear both;
+    animation-delay: 0.5s;
     content: url("../../assets/images/plane-bg.png");
     position: absolute;
     bottom: 70%;
@@ -60,9 +65,14 @@
   width: 100%;
   text-align: center;
   img:first-of-type {
+    -webkit-animation: fade-in-right 0.6s ease both;
+    animation: fade-in-right 0.6s ease both;
     display: none;
   }
   img:last-of-type {
+    -webkit-animation: fade-in-right 0.6s linear both;
+    animation: fade-in-right 0.6s linear both;
+    animation-delay: 0.5s;
     position: absolute;
     width: 90%;
     left: 0;
@@ -88,6 +98,9 @@
   justify-content: space-around;
   display: none;
   img {
+    -webkit-animation: flip-in-hor-bottom 0.5s
+      cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: flip-in-hor-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     width: 20%;
     max-width: 200px;
     mix-blend-mode: luminosity;

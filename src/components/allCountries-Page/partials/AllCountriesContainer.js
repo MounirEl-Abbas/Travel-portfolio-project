@@ -17,7 +17,11 @@ const AllCountriesContainer = ({ countriesToDisplay }) => {
       >
         {countriesToDisplay.map((country) => {
           return (
-            <Link to={`${country.name.common}`} className="country">
+            <Link
+              to={`${country.name.common}`}
+              className="country"
+              data-aos="fade-right"
+            >
               <CountryCard country={country} />
             </Link>
           );

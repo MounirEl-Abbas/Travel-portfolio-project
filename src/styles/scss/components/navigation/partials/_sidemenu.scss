@@ -4,6 +4,7 @@
 .sidemenu-container {
   height: 100%;
   width: 100%;
+  max-width: 100vw;
   transform: translateX(-100%);
   position: fixed;
   z-index: 4;

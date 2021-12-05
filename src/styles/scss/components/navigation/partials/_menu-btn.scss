@@ -1,11 +1,15 @@
 .menu-btn {
   position: fixed;
   top: 3rem;
-  right: 3rem;
+  right: 20vw;
   font-size: 25px;
   cursor: pointer;
   z-index: 5;
   color: $accent-color;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 
   &-cross {
     color: rgb(180, 39, 39);

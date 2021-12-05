@@ -10,6 +10,9 @@ import {
 } from "../../../assets";
 
 const Sidemenu = ({ isMenuOpen, setIsMenuOpen }) => {
+  window.addEventListener("scroll", () => {
+    setIsMenuOpen(false);
+  });
   return (
     <div
       className={`${

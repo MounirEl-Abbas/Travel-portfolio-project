@@ -49,6 +49,8 @@
     position: relative;
     max-width: 700px;
     &::before {
+      -webkit-animation: fade-in-low-opacity 1.2s ease both;
+      animation: fade-in-low-opacity 1.2s ease both;
       content: "";
       position: absolute;
       left: 0px;
